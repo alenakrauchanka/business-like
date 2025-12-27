@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 1: Приветствия — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <style>
+        /* Дополнительные стили для урока */
+        .audio-player-section {
+            background: linear-gradient(135deg, #1B189E 0%, #3D3AB8 100%);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+            color: white;
+        }
+        
+        .audio-player-section h3 {
+            color: white;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin-top: 12px;
+        }
+        
+        .audio-player audio {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .vocabulary-list {
+            background: #FFF9EE;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .vocabulary-list h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .vocab-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        .vocab-table th:first-child {
+            border-radius: var(--radius-sm) 0 0 0;
+        }
+        
+        .vocab-table th:last-child {
+            border-radius: 0 var(--radius-sm) 0 0;
+        }
+        
+        .vocab-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .vocab-table tr:hover {
+            background: var(--light);
+        }
+        
+        .vocab-english {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .vocab-transcription {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .homework-section {
+            background: #FDF6E3;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin: 24px 0;
+            color: #333;
+        }
+        
+        .homework-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .homework-task {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #E8E0D0;
+        }
+        
+        .homework-task:last-child {
+            margin-bottom: 0;
+        }
+        
+        .homework-task h4 {
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .homework-task p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .homework-task ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        
+        .homework-task li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .grammar-note {
+            background: var(--accent-yellow);
+            color: var(--dark);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .grammar-note h4 {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .example-sentence {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        
+        .example-sentence .english {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        
+        .example-sentence .russian {
+            color: var(--gray-dark);
+        }
+        
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: var(--radius-xl);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: background var(--transition-fast);
+        }
+        
+        .download-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Audio button styles */
+        .audio-btn {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: linear-gradient(135deg, var(--primary) 0%, #3D3AB8 100%);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(27, 24, 158, 0.3);
+        }
+        
+        .audio-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(27, 24, 158, 0.4);
+        }
+        
+        .audio-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .audio-btn.playing {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff6b3d 100%);
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 79, 19, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 79, 19, 0); }
+        }
+        
+        /* Video confirm styles */
+        .video-confirm {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            border: 2px dashed #4CAF50;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .confirm-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2E7D32;
+            margin-bottom: 16px;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        }
+        
+        .btn-success:active {
+            transform: scale(0.95);
+        }
+        
+        .video-confirmed {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            animation: confirmedPop 0.5s ease;
+        }
+        
+        .confirmed-icon {
+            font-size: 28px;
+        }
+        
+        .confirmed-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        @keyframes confirmedPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Vocab confirm button */
+        .vocab-confirm {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        /* Tasks confirm button */
+        .tasks-confirm {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация урока -->
+    <nav class="lesson-navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo lesson-logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <a href="course-beginners.html" class="back-to-course">
+                <span class="back-icon">←</span>
+                <span class="back-text">К курсу</span>
+            </a>
+            <div class="lesson-nav-info">
+                <span class="lesson-nav-title">Урок 1 из 40</span>
+                <div class="lesson-nav-progress">
+                    <div class="nav-progress-bar">
+                        <div class="nav-progress-fill" style="width: 2.5%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-nav-actions">
+                <button class="btn btn-ghost btn-small" disabled>← Назад</button>
+                <a href="lesson.html?course=beginners&module=1&lesson=2" class="btn btn-primary btn-small">Далее →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент урока -->
+    <main class="lesson-main">
+        <div class="container">
+            <div class="lesson-layout">
+                <!-- Левая колонка — контент урока -->
+                <div class="lesson-content">
+                    <!-- Заголовок урока -->
+                    <div class="lesson-header">
+                        <span class="lesson-module-badge">Модуль 1: Уроки 1-20</span>
+                        <h1 class="lesson-title">Урок 1. Приветствия</h1>
+                        <p class="lesson-description">
+                            В первом уроке вы узнаете, как правильно здороваться по-английски, 
+                            узнаете ваши первые глаголы, познакомитесь с понятием инфинитива, 
+                            а также научитесь составлять ваши первые предложения в виде просьб, предложений, приказов.
+                        </p>
+                    </div>
+
+                    <!-- Вкладки контента -->
+                    <div class="lesson-tabs">
+                        <button class="tab-btn active" data-tab="video">📺 Видео</button>
+                        <button class="tab-btn" data-tab="vocabulary">📝 Лексика</button>
+                        <button class="tab-btn" data-tab="materials">📝 Задания</button>
+                        <button class="tab-btn" data-tab="quiz">🎮 Квиз</button>
+                        <button class="tab-btn" data-tab="game">🕹️ Игра</button>
+                    </div>
+
+                    <!-- Контент вкладок -->
+                    <div class="tab-content">
+                        <!-- Вкладка: Видео -->
+                        <div class="tab-pane active" id="video">
+                            <div class="video-container">
+                                <!-- Переключатель видео платформы -->
+                                <div class="video-platform-switch">
+                                    <span class="switch-label">Платформа видео:</span>
+                                    <div class="switch-buttons">
+                                        <button class="switch-btn active" data-platform="youtube">
+                                            <span class="platform-icon">▶</span> YouTube
+                                        </button>
+                                        <button class="switch-btn" data-platform="rutube">
+                                            <span class="platform-icon">🎬</span> Rutube
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- YouTube плеер -->
+                                <div class="video-player" id="youtube-player">
+                                    <div class="video-wrapper">
+                                        <!-- Тестовое видео - замените на реальное -->
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/5MgBikgcWnY" 
+                                            title="Урок 1: Приветствия"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                                
+                                <!-- Rutube плеер (скрыт по умолчанию) -->
+                                <div class="video-player hidden" id="rutube-player">
+                                    <div class="video-wrapper">
+                                        <!-- Замените на реальный ID видео Rutube -->
+                                        <iframe 
+                                            src="https://rutube.ru/play/embed/a9d1c1e5f9c7a8b3d2e1f0a9b8c7d6e5" 
+                                            title="Урок 1: Приветствия"
+                                            frameborder="0" 
+                                            allow="clipboard-write; autoplay" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <div class="video-info">
+                                    <p class="video-note">
+                                        💡 <strong>Совет:</strong> Смотрите видео с субтитрами и повторяйте за преподавателем вслух!
+                                    </p>
+                                </div>
+
+                                <!-- Подтверждение просмотра -->
+                                <div class="video-confirm" id="videoConfirm">
+                                    <p class="confirm-text">Видео посмотрел(а), честное пионерское! ✋</p>
+                                    <button class="btn btn-success confirm-btn" id="confirmVideoBtn">
+                                        ✓ Подтверждаю!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Задания -->
+                        <div class="tab-pane" id="materials">
+                            <div class="text-content">
+
+                                <!-- Упражнения урока -->
+                                <div class="homework-section">
+                                    <h3>📝 Упражнения к уроку 1 (задания сдаются куратору)</h3>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 1</h4>
+                                        <p>Назовите голосом 3 варианта, как мы здороваемся на английском.</p>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 2</h4>
+                                        <p>Скажите на английском предложения, употребив слово «Hey»:</p>
+                                        <ul>
+                                            <li>Эй, подойди сюда.</li>
+                                            <li>Эй, что происходит.</li>
+                                            <li>Эй, что ты делаешь!</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 3</h4>
+                                        <p>Прочитайте голосом и скажите 3 варианта перевода «Hey, folks».</p>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 4</h4>
+                                        <p>Прочитайте правильно, переведите и запишите голосом слова:</p>
+                                        <ul>
+                                            <li><strong>Walk</strong> — ?</li>
+                                            <li><strong>Talk</strong> — ?</li>
+                                            <li><strong>Chalk</strong> — ?</li>
+                                            <li><strong>Yolk</strong> — ?</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 5</h4>
+                                        <p>Объясните, что такое ИНФИНИТИВ своими словами. Назовите 3 примера инфинитива на русском и на английском.</p>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 6</h4>
+                                        <p>Прочитайте на английском, затем переведите на русский:</p>
+                                        <ul>
+                                            <li>Please, talk with / to me.</li>
+                                            <li>Please, walk with me.</li>
+                                            <li>Please, use this chalk.</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 7</h4>
+                                        <p>Переведите глаголы на английский. Слова стоят в изначальной форме (то есть в инфинитиве, поэтому не забывайте использовать с ними частицу <strong>to</strong>):</p>
+                                        <ul>
+                                            <li>Идти — ?</li>
+                                            <li>Приходить — ?</li>
+                                            <li>Писáть — ?</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 8</h4>
+                                        <p>Выберите правильный вариант перевода. Объясните ваш выбор.</p>
+                                        <p><strong>Пожалуйста, сходи в супермаркет.</strong></p>
+                                        <ul>
+                                            <li>a) Please, to go to the supermarket.</li>
+                                            <li>b) Please, go to the supermarket.</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 9</h4>
+                                        <p>Прочитайте вслух и переведите на русский:</p>
+                                        <ul>
+                                            <li>I have a lot of time.</li>
+                                            <li>I have a lot of money.</li>
+                                            <li>I have a lot of friends.</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="homework-task">
+                                        <h4>Задание 10</h4>
+                                        <p>Скажите на английском «До встречи!» (Увидимся с тобой!).</p>
+                                    </div>
+                                </div>
+
+                                <!-- Подсказка -->
+                                <div class="grammar-note">
+                                    <h4>💡 Подсказка по произношению</h4>
+                                    <p>Если не знаете, как произнести слово:</p>
+                                    <ul style="margin-top: 10px;">
+                                        <li>Пересмотрите видео — там все слова произнесены.</li>
+                                        <li>Введите в YouTube: <strong>pronounce [слово]</strong> — например, «pronounce yolk».</li>
+                                        <li>Используйте кнопки 🔊 во вкладке «Лексика».</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Подтверждение отправки заданий -->
+                                <div class="tasks-confirm" id="tasksConfirm">
+                                    <button class="btn btn-success confirm-btn" id="confirmTasksBtn">
+                                        ✓ Задания отправлены куратору
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Лексика -->
+                        <div class="tab-pane" id="vocabulary">
+                            <div class="text-content">
+
+                                <!-- Приветствия -->
+                                <div class="vocabulary-list">
+                                    <h3>👋 Приветствия</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hi">🔊</button></td>
+                                                <td class="vocab-english">Hi</td>
+                                                <td>привет!</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey">🔊</button></td>
+                                                <td class="vocab-english">Hey</td>
+                                                <td>привет!</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hello">🔊</button></td>
+                                                <td class="vocab-english">Hello</td>
+                                                <td>Привет! Здравствуй! Здравствуйте!</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hello, my dear friend">🔊</button></td>
+                                                <td class="vocab-english">Hello, my dear friend</td>
+                                                <td>Здравствуй, мой дорогой друг.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hello, Mum">🔊</button></td>
+                                                <td class="vocab-english">Hello, Mum.</td>
+                                                <td>Здравствуй, мама.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hello, Dad">🔊</button></td>
+                                                <td class="vocab-english">Hello, Dad.</td>
+                                                <td>Здравствуй, папа.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey, folks">🔊</button></td>
+                                                <td class="vocab-english">Hey, folks</td>
+                                                <td>Привет, ребята.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey, come here">🔊</button></td>
+                                                <td class="vocab-english">Hey, come here</td>
+                                                <td>Эй, подойди сюда.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey, what is going on?">🔊</button></td>
+                                                <td class="vocab-english">Hey, what is going on?</td>
+                                                <td>Эй, что происходит?</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey, what is going on here?">🔊</button></td>
+                                                <td class="vocab-english">Hey, what is going on here?</td>
+                                                <td>Эй, что здесь происходит?</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Hey, what are you doing?">🔊</button></td>
+                                                <td class="vocab-english">Hey, what are you doing?</td>
+                                                <td>Эй, что ты делаешь?</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="See you">🔊</button></td>
+                                                <td class="vocab-english">See you</td>
+                                                <td>До встречи! (Увидимся с тобой!)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Семья -->
+                                <div class="vocabulary-list">
+                                    <h3>👨‍👩‍👧 Семья</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="mother">🔊</button></td>
+                                                <td class="vocab-english">mother</td>
+                                                <td>мать</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="father">🔊</button></td>
+                                                <td class="vocab-english">father</td>
+                                                <td>отец</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="mummy">🔊</button></td>
+                                                <td class="vocab-english">mummy</td>
+                                                <td>мамочка</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Местоимения -->
+                                <div class="vocabulary-list">
+                                    <h3>👤 Местоимения</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I">🔊</button></td>
+                                                <td class="vocab-english">I</td>
+                                                <td>я</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="We">🔊</button></td>
+                                                <td class="vocab-english">We</td>
+                                                <td>мы</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="This">🔊</button></td>
+                                                <td class="vocab-english">This</td>
+                                                <td>этот, эта</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Глаголы -->
+                                <div class="vocabulary-list">
+                                    <h3>🔤 Глаголы</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To talk">🔊</button></td>
+                                                <td class="vocab-english">To talk</td>
+                                                <td>говорить</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I talk a lot">🔊</button></td>
+                                                <td class="vocab-english">I talk a lot</td>
+                                                <td>Я много говорю.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To have">🔊</button></td>
+                                                <td class="vocab-english">To have</td>
+                                                <td>иметь (у кого-то что-то есть)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I have a lot of time">🔊</button></td>
+                                                <td class="vocab-english">I have a lot of time</td>
+                                                <td>У меня много времени.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I have a lot of money">🔊</button></td>
+                                                <td class="vocab-english">I have a lot of money</td>
+                                                <td>У меня много денег.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I have a lot of friends">🔊</button></td>
+                                                <td class="vocab-english">I have a lot of friends</td>
+                                                <td>У меня много друзей.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Walk">🔊</button></td>
+                                                <td class="vocab-english">Walk</td>
+                                                <td>гулять</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="We walk">🔊</button></td>
+                                                <td class="vocab-english">We walk</td>
+                                                <td>Мы гуляем.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="We walk in the street">🔊</button></td>
+                                                <td class="vocab-english">We walk in the street</td>
+                                                <td>Мы гуляем по улице.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To use">🔊</button></td>
+                                                <td class="vocab-english">To use</td>
+                                                <td>использовать, пользоваться</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I use">🔊</button></td>
+                                                <td class="vocab-english">I use</td>
+                                                <td>я использую</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I use chalk">🔊</button></td>
+                                                <td class="vocab-english">I use chalk</td>
+                                                <td>я использую мел</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To write">🔊</button></td>
+                                                <td class="vocab-english">To write</td>
+                                                <td>писáть</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I write">🔊</button></td>
+                                                <td class="vocab-english">I write</td>
+                                                <td>я пишу</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I use chalk to write on the blackboard">🔊</button></td>
+                                                <td class="vocab-english">I use chalk to write on the blackboard</td>
+                                                <td>я использую мел, чтобы писать на доске</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="to eat">🔊</button></td>
+                                                <td class="vocab-english">to eat</td>
+                                                <td>кушать</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="When I eat eggs, I don't eat yolks">🔊</button></td>
+                                                <td class="vocab-english">When I eat eggs, I don't eat yolks</td>
+                                                <td>Когда я ем яйца, я не ем желтки.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To go">🔊</button></td>
+                                                <td class="vocab-english">To go</td>
+                                                <td>идти</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I go">🔊</button></td>
+                                                <td class="vocab-english">I go</td>
+                                                <td>я иду</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="To come">🔊</button></td>
+                                                <td class="vocab-english">To come</td>
+                                                <td>приходить</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="I come">🔊</button></td>
+                                                <td class="vocab-english">I come</td>
+                                                <td>я прихожу</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Количество -->
+                                <div class="vocabulary-list">
+                                    <h3>📊 Количество</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="A lot">🔊</button></td>
+                                                <td class="vocab-english">A lot</td>
+                                                <td>много</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="A lot of">🔊</button></td>
+                                                <td class="vocab-english">A lot of</td>
+                                                <td>много чего-то</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="A lot of time">🔊</button></td>
+                                                <td class="vocab-english">A lot of time</td>
+                                                <td>много времени</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="A lot of money">🔊</button></td>
+                                                <td class="vocab-english">A lot of money</td>
+                                                <td>много денег</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="A lot of friends">🔊</button></td>
+                                                <td class="vocab-english">A lot of friends</td>
+                                                <td>много друзей</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Другие слова -->
+                                <div class="vocabulary-list">
+                                    <h3>📚 Другие слова и фразы</h3>
+                                    <table class="vocab-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;"></th>
+                                                <th>English</th>
+                                                <th>Русский</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="In the street">🔊</button></td>
+                                                <td class="vocab-english">In the street</td>
+                                                <td>на улице, по улице</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Chalk">🔊</button></td>
+                                                <td class="vocab-english">Chalk</td>
+                                                <td>мел</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Blackboard">🔊</button></td>
+                                                <td class="vocab-english">Blackboard</td>
+                                                <td>доска</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="On">🔊</button></td>
+                                                <td class="vocab-english">On</td>
+                                                <td>предлог «на»</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="When">🔊</button></td>
+                                                <td class="vocab-english">When</td>
+                                                <td>когда</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Eggs">🔊</button></td>
+                                                <td class="vocab-english">Eggs</td>
+                                                <td>яйца</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Yolk">🔊</button></td>
+                                                <td class="vocab-english">Yolk</td>
+                                                <td>желток</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Please">🔊</button></td>
+                                                <td class="vocab-english">Please</td>
+                                                <td>пожалуйста</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="With">🔊</button></td>
+                                                <td class="vocab-english">With</td>
+                                                <td>c</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="with me">🔊</button></td>
+                                                <td class="vocab-english">with me</td>
+                                                <td>со мной</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Please, talk with me">🔊</button></td>
+                                                <td class="vocab-english">Please, talk with me</td>
+                                                <td>Пожалуйста, поговори со мной.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><button class="audio-btn" data-word="Please, use this chalk">🔊</button></td>
+                                                <td class="vocab-english">Please, use this chalk</td>
+                                                <td>Пожалуйста, используй этот мел.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Подтверждение изучения лексики -->
+                                <div class="vocab-confirm" id="vocabConfirm">
+                                    <button class="btn btn-success confirm-btn" id="confirmVocabBtn">
+                                        ✓ Лексика изучена
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Квиз -->
+                        <div class="tab-pane" id="quiz">
+                            <div class="quiz-container">
+                                <div class="quiz-header">
+                                    <h2>🎯 Проверь себя!</h2>
+                                    <div class="quiz-progress">
+                                        <span class="quiz-current">Вопрос <span id="currentQuestion">1</span> из <span id="totalQuestions">10</span></span>
+                                        <div class="quiz-progress-bar">
+                                            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="quiz-content" id="quizContent">
+                                    <!-- Вопрос 1 -->
+                                    <div class="quiz-question active" data-question="1">
+                                        <h3 class="question-text">Как переводится "Hello, my dear friend"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">До свидания, мой друг</button>
+                                            <button class="quiz-option" data-correct="true">Здравствуй, мой дорогой друг</button>
+                                            <button class="quiz-option" data-correct="false">Привет, незнакомец</button>
+                                            <button class="quiz-option" data-correct="false">Пока, мой друг</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 2 -->
+                                    <div class="quiz-question" data-question="2">
+                                        <h3 class="question-text">Какое приветствие подходит для любой ситуации — официальной и неформальной?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Hey</button>
+                                            <button class="quiz-option" data-correct="true">Hello</button>
+                                            <button class="quiz-option" data-correct="false">Yo</button>
+                                            <button class="quiz-option" data-correct="false">What's up</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 3 -->
+                                    <div class="quiz-question" data-question="3">
+                                        <h3 class="question-text">Почему в словах walk, talk, chalk буква L не произносится?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Это ошибка в написании</button>
+                                            <button class="quiz-option" data-correct="false">L произносится, но очень тихо</button>
+                                            <button class="quiz-option" data-correct="true">В буквосочетании LK буква L не произносится</button>
+                                            <button class="quiz-option" data-correct="false">Это американский вариант произношения</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 4 -->
+                                    <div class="quiz-question" data-question="4">
+                                        <h3 class="question-text">Что такое ИНФИНИТИВ?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Прошедшее время глагола</button>
+                                            <button class="quiz-option" data-correct="false">Множественное число</button>
+                                            <button class="quiz-option" data-correct="true">Изначальная (базовая) форма глагола</button>
+                                            <button class="quiz-option" data-correct="false">Будущее время глагола</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 5 -->
+                                    <div class="quiz-question" data-question="5">
+                                        <h3 class="question-text">Какая частица ставится перед глаголом в инфинитиве?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">a</button>
+                                            <button class="quiz-option" data-correct="false">the</button>
+                                            <button class="quiz-option" data-correct="true">to</button>
+                                            <button class="quiz-option" data-correct="false">an</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 6 -->
+                                    <div class="quiz-question" data-question="6">
+                                        <h3 class="question-text">Как переводится "Hey, folks"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Эй, стой!</button>
+                                            <button class="quiz-option" data-correct="true">Привет, ребята / народ</button>
+                                            <button class="quiz-option" data-correct="false">До свидания, друзья</button>
+                                            <button class="quiz-option" data-correct="false">Извините, пожалуйста</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 7 -->
+                                    <div class="quiz-question" data-question="7">
+                                        <h3 class="question-text">Как правильно попросить кого-то поговорить с вами?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Please, to talk with me</button>
+                                            <button class="quiz-option" data-correct="true">Please, talk with me</button>
+                                            <button class="quiz-option" data-correct="false">Please, talking with me</button>
+                                            <button class="quiz-option" data-correct="false">Please, talked with me</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 8 -->
+                                    <div class="quiz-question" data-question="8">
+                                        <h3 class="question-text">Что означает "yolk"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">мел</button>
+                                            <button class="quiz-option" data-correct="false">прогулка</button>
+                                            <button class="quiz-option" data-correct="true">желток</button>
+                                            <button class="quiz-option" data-correct="false">разговор</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 9 -->
+                                    <div class="quiz-question" data-question="9">
+                                        <h3 class="question-text">Как переводится "I have a lot of friends"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Я хочу много друзей</button>
+                                            <button class="quiz-option" data-correct="true">У меня много друзей</button>
+                                            <button class="quiz-option" data-correct="false">У меня нет друзей</button>
+                                            <button class="quiz-option" data-correct="false">Мои друзья рядом</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 10 -->
+                                    <div class="quiz-question" data-question="10">
+                                        <h3 class="question-text">Как сказать "До встречи!" на английском?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Hello!</button>
+                                            <button class="quiz-option" data-correct="false">Thank you!</button>
+                                            <button class="quiz-option" data-correct="false">Please!</button>
+                                            <button class="quiz-option" data-correct="true">See you!</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Результаты квиза -->
+                                <div class="quiz-results hidden" id="quizResults">
+                                    <div class="results-icon" id="resultsIcon">🎉</div>
+                                    <h3 class="results-title" id="resultsTitle">Отлично!</h3>
+                                    <p class="results-text" id="resultsText">Вы ответили правильно на 10 из 10 вопросов</p>
+                                    <div class="results-score">
+                                        <div class="score-circle">
+                                            <span class="score-number" id="scoreNumber">100</span>
+                                            <span class="score-percent">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="results-actions">
+                                        <button class="btn btn-outline" id="retryQuiz">Пройти ещё раз</button>
+                                        <button class="btn btn-primary" id="continueLesson">Продолжить →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Игра -->
+                        <div class="tab-pane" id="game">
+                            <div class="game-container">
+                                <div class="game-header">
+                                    <h2>🎮 Игра: Соедини пары</h2>
+                                    <p>Выбери английское слово, затем его перевод</p>
+                                    <div class="game-stats">
+                                        <span class="game-pairs">Пары: <span id="gameMatchedPairs">0</span> / <span id="gameTotalPairs">5</span></span>
+                                        <span class="game-moves">Ходов: <span id="gameMoves">0</span></span>
+                                    </div>
+                                </div>
+
+                                <div class="matching-game" id="matchingGame">
+                                    <div class="game-column english-column">
+                                        <div class="game-card english" data-pair="1">Hello</div>
+                                        <div class="game-card english" data-pair="2">See you</div>
+                                        <div class="game-card english" data-pair="3">to go</div>
+                                        <div class="game-card english" data-pair="4">to come</div>
+                                        <div class="game-card english" data-pair="5">Please</div>
+                                    </div>
+                                    <div class="game-column russian-column">
+                                        <div class="game-card russian" data-pair="3">идти</div>
+                                        <div class="game-card russian" data-pair="1">Привет</div>
+                                        <div class="game-card russian" data-pair="5">Пожалуйста</div>
+                                        <div class="game-card russian" data-pair="4">приходить</div>
+                                        <div class="game-card russian" data-pair="2">До встречи</div>
+                                    </div>
+                                </div>
+
+                                <div class="game-complete hidden" id="gameComplete">
+                                    <div class="game-complete-icon">🏆</div>
+                                    <h3>Поздравляем!</h3>
+                                    <p>Все пары найдены за <span id="finalMoves">0</span> ходов!</p>
+                                    <button class="btn btn-primary" id="restartGame">Играть ещё раз</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Навигация между уроками -->
+                    <div class="lesson-navigation">
+                        <div class="lesson-nav-bottom">
+                            <a href="lesson.html?course=beginners&module=1&lesson=2" class="btn btn-primary">
+                                Следующий урок: Порядок слов →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка — сайдбар -->
+                <aside class="lesson-sidebar">
+                    <!-- Прогресс урока -->
+                    <div class="sidebar-card progress-card">
+                        <h3>📊 Прогресс урока</h3>
+                        <div class="progress-checklist">
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkVideo">
+                                <span class="checkmark"></span>
+                                <span>Посмотреть видео</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkVocabulary">
+                                <span class="checkmark"></span>
+                                <span>Выучить лексику</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkMaterials">
+                                <span class="checkmark"></span>
+                                <span>Выполнить задания</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkQuiz">
+                                <span class="checkmark"></span>
+                                <span>Пройти квиз</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkGame">
+                                <span class="checkmark"></span>
+                                <span>Сыграть в игру</span>
+                            </label>
+                        </div>
+                        <div class="lesson-complete-btn-container">
+                            <button class="btn btn-primary btn-block" id="completeLessonBtn" disabled>
+                                ✓ Завершить урок
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Скачать материалы -->
+                    <div class="sidebar-card">
+                        <h3>📁 Скачать материалы</h3>
+                        <div class="download-list">
+                            <a href="https://disk.yandex.ru/d/dRN60d2EWUAplA" target="_blank" class="download-item">
+                                <span class="download-icon">🎵</span>
+                                <span>Аудио: Лексика урока 1</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Навигация по урокам -->
+                    <div class="sidebar-card">
+                        <h3>📚 Уроки модуля</h3>
+                        <div class="lesson-nav-list">
+                            <a href="lesson-1.html" class="lesson-nav-item current">
+                                <span class="nav-status">▶</span>
+                                <span class="nav-title">1. Приветствия</span>
+                            </a>
+                            <a href="lesson.html?course=beginners&module=1&lesson=2" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">2. Порядок слов (начало)</span>
+                            </a>
+                            <a href="#" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">3. Порядок слов (продолжение)</span>
+                            </a>
+                            <a href="#" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">4. Порядок слов (окончание)</span>
+                            </a>
+                            <a href="#" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">5. Притяжательные местоимения</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Помощь -->
+                    <div class="sidebar-card help-card">
+                        <div class="help-icon">🎓</div>
+                        <h3>Нужна помощь?</h3>
+                        <p>Если что-то непонятно, загляни в раздел помощи или напиши нам!</p>
+                        <a href="#" class="btn btn-outline btn-small btn-block">Задать вопрос</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" style="margin-top: 60px;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lesson.js"></script>
+    <script>
+        // Переключение вкладок
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Убираем active у всех кнопок и панелей
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+                
+                // Добавляем active текущей кнопке и панели
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Переключение видео платформы
+        document.querySelectorAll('.switch-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.switch-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const platform = btn.dataset.platform;
+                document.getElementById('youtube-player').classList.toggle('hidden', platform !== 'youtube');
+                document.getElementById('rutube-player').classList.toggle('hidden', platform !== 'rutube');
+            });
+        });
+
+        // Прогресс урока - чекбоксы
+        const checkboxes = document.querySelectorAll('.progress-checklist input[type="checkbox"]');
+        const completeBtn = document.getElementById('completeLessonBtn');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                completeBtn.disabled = !allChecked;
+                
+                // Добавляем класс completed для стилизации
+                checkbox.closest('.progress-item').classList.toggle('completed', checkbox.checked);
+            });
+        });
+
+        // Кнопка завершения урока
+        if (completeBtn) {
+            completeBtn.addEventListener('click', () => {
+                // Play celebration sound
+                playCelebrationSound();
+                
+                // Show fireworks
+                showFireworks();
+                
+                // After fireworks, redirect to next lesson
+                setTimeout(() => {
+                    window.location.href = 'lesson.html?course=beginners&module=1&lesson=2';
+                }, 4000);
+            });
+        }
+        
+        // Celebration sound (fanfare)
+        function playCelebrationSound() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Fanfare notes: C-E-G-C (arpeggio up)
+            const notes = [
+                { freq: 523.25, time: 0, duration: 0.2 },      // C5
+                { freq: 659.25, time: 0.15, duration: 0.2 },   // E5
+                { freq: 783.99, time: 0.3, duration: 0.2 },    // G5
+                { freq: 1046.5, time: 0.45, duration: 0.5 },   // C6 (hold)
+            ];
+            
+            notes.forEach(note => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                
+                osc.frequency.value = note.freq;
+                osc.type = 'triangle';
+                
+                const startTime = audioContext.currentTime + note.time;
+                gain.gain.setValueAtTime(0.25, startTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, startTime + note.duration);
+                
+                osc.start(startTime);
+                osc.stop(startTime + note.duration);
+            });
+        }
+        
+        // Fireworks animation
+        function showFireworks() {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.id = 'fireworks-overlay';
+            overlay.innerHTML = `
+                <div class="fireworks-content">
+                    <div class="fireworks-emoji">🎉🎊🎆🎇🎉</div>
+                    <h1 class="fireworks-title">Поздравляем!</h1>
+                    <p class="fireworks-text">Урок 1 завершён!</p>
+                    <div class="fireworks-stars"></div>
+                </div>
+            `;
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.85);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(overlay);
+            
+            // Add styles for fireworks
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes bounceIn {
+                    0% { transform: scale(0); opacity: 0; }
+                    50% { transform: scale(1.2); }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+                @keyframes float {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-20px); }
+                }
+                @keyframes sparkle {
+                    0%, 100% { opacity: 1; transform: scale(1); }
+                    50% { opacity: 0.5; transform: scale(1.5); }
+                }
+                .fireworks-content {
+                    text-align: center;
+                    color: white;
+                }
+                .fireworks-emoji {
+                    font-size: 60px;
+                    animation: bounceIn 0.5s ease, float 2s ease infinite;
+                    margin-bottom: 20px;
+                }
+                .fireworks-title {
+                    font-size: 48px;
+                    font-weight: 800;
+                    color: #FFD700;
+                    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+                    margin-bottom: 10px;
+                    animation: bounceIn 0.5s ease 0.2s both;
+                }
+                .fireworks-text {
+                    font-size: 24px;
+                    color: white;
+                    animation: bounceIn 0.5s ease 0.4s both;
+                }
+                .fireworks-stars {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                    overflow: hidden;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Create floating particles
+            const starsContainer = overlay.querySelector('.fireworks-stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.textContent = ['✨', '⭐', '🌟', '💫'][Math.floor(Math.random() * 4)];
+                star.style.cssText = `
+                    position: absolute;
+                    font-size: ${20 + Math.random() * 30}px;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: sparkle ${1 + Math.random() * 2}s ease infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Text-to-Speech for vocabulary pronunciation
+        function speakWord(text) {
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85; // Slightly slower for learning
+            utterance.pitch = 1;
+            
+            // Find English voice
+            const voices = window.speechSynthesis.getVoices();
+            const englishVoice = voices.find(v => v.lang.startsWith('en-'));
+            if (englishVoice) {
+                utterance.voice = englishVoice;
+            }
+            
+            window.speechSynthesis.speak(utterance);
+            return utterance;
+        }
+
+        // Initialize audio buttons
+        document.querySelectorAll('.audio-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const word = this.getAttribute('data-word');
+                if (!word) return;
+                
+                // Visual feedback
+                this.classList.add('playing');
+                
+                const utterance = speakWord(word);
+                
+                utterance.onend = () => {
+                    this.classList.remove('playing');
+                };
+                
+                utterance.onerror = () => {
+                    this.classList.remove('playing');
+                };
+            });
+        });
+
+        // Load voices (needed for some browsers)
+        if (window.speechSynthesis) {
+            window.speechSynthesis.getVoices();
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices();
+            };
+        }
+
+        // Video confirmation button with sound
+        const confirmVideoBtn = document.getElementById('confirmVideoBtn');
+        const videoConfirm = document.getElementById('videoConfirm');
+        const checkVideo = document.getElementById('checkVideo');
+        
+        if (confirmVideoBtn) {
+            confirmVideoBtn.addEventListener('click', () => {
+                // Play success sound
+                playSuccessSound();
+                
+                // Hide confirm block
+                videoConfirm.classList.add('hidden');
+                
+                // Mark video as watched in progress
+                if (checkVideo) {
+                    checkVideo.checked = true;
+                    checkVideo.closest('.progress-item').classList.add('completed');
+                    
+                    // Update complete button state
+                    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                    completeBtn.disabled = !allChecked;
+                }
+            });
+        }
+
+        // Vocabulary confirmation button
+        const confirmVocabBtn = document.getElementById('confirmVocabBtn');
+        const vocabConfirm = document.getElementById('vocabConfirm');
+        const checkVocabulary = document.getElementById('checkVocabulary');
+        
+        if (confirmVocabBtn) {
+            confirmVocabBtn.addEventListener('click', () => {
+                // Play success sound
+                playSuccessSound();
+                
+                // Hide confirm block
+                vocabConfirm.classList.add('hidden');
+                
+                // Mark vocabulary as learned in progress
+                if (checkVocabulary) {
+                    checkVocabulary.checked = true;
+                    checkVocabulary.closest('.progress-item').classList.add('completed');
+                    
+                    // Update complete button state
+                    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                    completeBtn.disabled = !allChecked;
+                }
+            });
+        }
+
+        // Tasks confirmation button
+        const confirmTasksBtn = document.getElementById('confirmTasksBtn');
+        const tasksConfirm = document.getElementById('tasksConfirm');
+        const checkMaterials = document.getElementById('checkMaterials');
+        
+        if (confirmTasksBtn) {
+            confirmTasksBtn.addEventListener('click', () => {
+                // Play success sound
+                playSuccessSound();
+                
+                // Hide confirm block
+                tasksConfirm.classList.add('hidden');
+                
+                // Mark tasks as done in progress
+                if (checkMaterials) {
+                    checkMaterials.checked = true;
+                    checkMaterials.closest('.progress-item').classList.add('completed');
+                    
+                    // Update complete button state
+                    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                    completeBtn.disabled = !allChecked;
+                }
+            });
+        }
+        
+        // Success sound function (тадам!)
+        function playSuccessSound() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Тадам! - два звука: низкий короткий, потом высокий длинный
+            // Первый звук - "та" (низкий, короткий)
+            const osc1 = audioContext.createOscillator();
+            const gain1 = audioContext.createGain();
+            osc1.connect(gain1);
+            gain1.connect(audioContext.destination);
+            osc1.frequency.value = 440; // A4
+            osc1.type = 'sine';
+            gain1.gain.setValueAtTime(0.2, audioContext.currentTime);
+            gain1.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+            osc1.start(audioContext.currentTime);
+            osc1.stop(audioContext.currentTime + 0.15);
+            
+            // Второй звук - "дам!" (высокий, дольше)
+            const osc2 = audioContext.createOscillator();
+            const gain2 = audioContext.createGain();
+            osc2.connect(gain2);
+            gain2.connect(audioContext.destination);
+            osc2.frequency.value = 880; // A5 - октавой выше
+            osc2.type = 'sine';
+            const startTime2 = audioContext.currentTime + 0.12;
+            gain2.gain.setValueAtTime(0.25, startTime2);
+            gain2.gain.exponentialRampToValueAtTime(0.01, startTime2 + 0.4);
+            osc2.start(startTime2);
+            osc2.stop(startTime2 + 0.4);
+        }
+    </script>
+</body>
+</html>
+

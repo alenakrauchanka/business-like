@@ -1,0 +1,568 @@
+/* ========================================
+   Страницы авторизации и регистрации
+======================================== */
+
+.auth-page {
+    min-height: 100vh;
+    background: var(--light);
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* ========================================
+   Секция формы
+======================================== */
+
+.auth-form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: var(--white);
+}
+
+.auth-form-wrapper {
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.auth-header p {
+    font-size: 16px;
+    color: var(--gray-dark);
+}
+
+/* ========================================
+   Форма
+======================================== */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    color: var(--dark);
+    background: var(--light);
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--gray);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+/* Сила пароля */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--gray-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 2px;
+    transition: all var(--transition-normal);
+}
+
+.strength-fill.weak {
+    width: 33%;
+    background: #E84393;
+}
+
+.strength-fill.medium {
+    width: 66%;
+    background: #FDCB6E;
+}
+
+.strength-fill.strong {
+    width: 100%;
+    background: var(--accent-beginners);
+}
+
+.strength-text {
+    font-size: 12px;
+    color: var(--gray-dark);
+    white-space: nowrap;
+}
+
+/* ========================================
+   Опции формы
+======================================== */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--gray-dark);
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.custom-checkbox::after {
+    content: '✓';
+    font-size: 12px;
+    color: var(--white);
+    opacity: 0;
+    transform: scale(0);
+    transition: all var(--transition-fast);
+}
+
+.checkbox-label input:checked + .custom-checkbox {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-label input:checked + .custom-checkbox::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.checkbox-label a {
+    color: var(--primary);
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.forgot-link {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Выбор роли
+======================================== */
+
+.role-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.role-option input {
+    display: none;
+}
+
+.role-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: var(--light);
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.role-card:hover {
+    border-color: var(--primary);
+    background: rgba(108, 92, 231, 0.05);
+}
+
+.role-option input:checked + .role-card {
+    border-color: var(--primary);
+    background: rgba(108, 92, 231, 0.1);
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+.role-icon {
+    font-size: 32px;
+}
+
+.role-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.role-desc {
+    font-size: 12px;
+    color: var(--gray-dark);
+}
+
+/* ========================================
+   Кнопки
+======================================== */
+
+.btn-block {
+    width: 100%;
+}
+
+/* ========================================
+   Разделитель
+======================================== */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-light);
+}
+
+.auth-divider span {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* ========================================
+   Социальные кнопки
+======================================== */
+
+.social-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 24px;
+    background: var(--white);
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-social:hover {
+    border-color: var(--gray);
+    background: var(--light);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.btn-google .social-icon {
+    color: #EA4335;
+}
+
+.btn-vk .social-icon {
+    color: #0077FF;
+}
+
+/* ========================================
+   Подвал формы
+======================================== */
+
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 15px;
+    color: var(--gray-dark);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Секция иллюстрации
+======================================== */
+
+.auth-illustration-section {
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-illustration {
+    background: var(--accent-orange);
+}
+
+.auth-illustration-content {
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    max-width: 400px;
+}
+
+.floating-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.float-item {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.item-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.item-2 { top: 20%; right: 15%; animation-delay: 1s; }
+.item-3 { bottom: 30%; left: 15%; animation-delay: 2s; }
+.item-4 { bottom: 15%; right: 10%; animation-delay: 1.5s; }
+
+.owl-mascot {
+    font-size: 100px;
+    margin-bottom: 24px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.auth-illustration-content h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.auth-illustration-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    color: var(--white);
+}
+
+/* Белый текст для всех элементов на синем/оранжевом фоне */
+.auth-illustration-section h1,
+.auth-illustration-section h2,
+.auth-illustration-section h3,
+.auth-illustration-section p,
+.auth-illustration-section span {
+    color: var(--white);
+}
+
+/* Статистика */
+.auth-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.auth-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-stat .stat-number {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.auth-stat .stat-label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Список преимуществ */
+.features-list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.feature-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* ========================================
+   Адаптивность
+======================================== */
+
+@media (max-width: 1024px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-illustration-section {
+        display: none;
+    }
+    
+    .auth-form-section {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .role-selector {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .auth-header h1 {
+        font-size: 28px;
+    }
+}
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 4: Приветствия и знакомство — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/lesson.css">
+</head>
+<body>
+    <!-- Навигация урока -->
+    <nav class="lesson-navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo lesson-logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <a href="course.html?id=1" class="back-to-course">
+                <span class="back-icon">←</span>
+                <span class="back-text">К курсу</span>
+            </a>
+            <div class="lesson-nav-info">
+                <span class="lesson-nav-title">Урок 4 из 24</span>
+                <div class="lesson-nav-progress">
+                    <div class="nav-progress-bar">
+                        <div class="nav-progress-fill" style="width: 16.6%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-nav-actions">
+                <button class="btn btn-ghost btn-small" id="prevLesson" disabled>← Назад</button>
+                <button class="btn btn-primary btn-small" id="nextLesson">Далее →</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент урока -->
+    <main class="lesson-main">
+        <div class="container">
+            <div class="lesson-layout">
+                <!-- Левая колонка — контент урока -->
+                <div class="lesson-content">
+                    <!-- Заголовок урока -->
+                    <div class="lesson-header">
+                        <span class="lesson-module-badge">Модуль 1: Знакомство с английским</span>
+                        <h1 class="lesson-title">Приветствия и знакомство</h1>
+                        <p class="lesson-description">
+                            В этом уроке мы научимся здороваться, прощаться и представляться на английском языке. 
+                            Вы узнаете самые популярные фразы для первого знакомства.
+                        </p>
+                    </div>
+
+                    <!-- Вкладки контента -->
+                    <div class="lesson-tabs">
+                        <button class="tab-btn active" data-tab="video">📺 Видео</button>
+                        <button class="tab-btn" data-tab="text">📖 Материалы</button>
+                        <button class="tab-btn" data-tab="quiz">🎮 Квиз</button>
+                        <button class="tab-btn" data-tab="game">🕹️ Игра</button>
+                    </div>
+
+                    <!-- Контент вкладок -->
+                    <div class="tab-content">
+                        <!-- Вкладка: Видео -->
+                        <div class="tab-pane active" id="video">
+                            <div class="video-container">
+                                <!-- Переключатель видео платформы -->
+                                <div class="video-platform-switch">
+                                    <span class="switch-label">Платформа видео:</span>
+                                    <div class="switch-buttons">
+                                        <button class="switch-btn active" data-platform="youtube">
+                                            <span class="platform-icon">▶</span> YouTube
+                                        </button>
+                                        <button class="switch-btn" data-platform="rutube">
+                                            <span class="platform-icon">🎬</span> Rutube
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- YouTube плеер -->
+                                <div class="video-player" id="youtube-player">
+                                    <div class="video-wrapper">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                            title="Урок: Приветствия и знакомство"
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                                
+                                <!-- Rutube плеер (скрыт по умолчанию) -->
+                                <div class="video-player hidden" id="rutube-player">
+                                    <div class="video-wrapper">
+                                        <iframe 
+                                            src="https://rutube.ru/play/embed/1234567890" 
+                                            title="Урок: Приветствия и знакомство"
+                                            frameborder="0" 
+                                            allow="clipboard-write; autoplay" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <div class="video-info">
+                                    <p class="video-note">
+                                        💡 <strong>Совет:</strong> Смотрите видео с субтитрами и повторяйте за преподавателем вслух!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Текстовые материалы -->
+                        <div class="tab-pane" id="text">
+                            <div class="text-content">
+                                <h2>📚 Основные приветствия</h2>
+                                
+                                <div class="vocabulary-section">
+                                    <h3>Формальные приветствия</h3>
+                                    <div class="vocab-cards">
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Hello</div>
+                                            <div class="vocab-transcription">[həˈləʊ]</div>
+                                            <div class="vocab-russian">Здравствуйте / Привет</div>
+                                            <button class="play-audio-btn" data-word="hello">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Good morning</div>
+                                            <div class="vocab-transcription">[gʊd ˈmɔːnɪŋ]</div>
+                                            <div class="vocab-russian">Доброе утро</div>
+                                            <button class="play-audio-btn" data-word="good-morning">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Good afternoon</div>
+                                            <div class="vocab-transcription">[gʊd ˌɑːftəˈnuːn]</div>
+                                            <div class="vocab-russian">Добрый день</div>
+                                            <button class="play-audio-btn" data-word="good-afternoon">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Good evening</div>
+                                            <div class="vocab-transcription">[gʊd ˈiːvnɪŋ]</div>
+                                            <div class="vocab-russian">Добрый вечер</div>
+                                            <button class="play-audio-btn" data-word="good-evening">🔊</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vocabulary-section">
+                                    <h3>Неформальные приветствия</h3>
+                                    <div class="vocab-cards">
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Hi!</div>
+                                            <div class="vocab-transcription">[haɪ]</div>
+                                            <div class="vocab-russian">Привет!</div>
+                                            <button class="play-audio-btn" data-word="hi">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Hey!</div>
+                                            <div class="vocab-transcription">[heɪ]</div>
+                                            <div class="vocab-russian">Эй! / Привет!</div>
+                                            <button class="play-audio-btn" data-word="hey">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">What's up?</div>
+                                            <div class="vocab-transcription">[wɒts ʌp]</div>
+                                            <div class="vocab-russian">Как дела? (сленг)</div>
+                                            <button class="play-audio-btn" data-word="whatsup">🔊</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vocabulary-section">
+                                    <h3>Знакомство</h3>
+                                    <div class="dialog-example">
+                                        <div class="dialog-line">
+                                            <span class="speaker">A:</span>
+                                            <span class="english">Hi! My name is Anna. What's your name?</span>
+                                            <span class="russian">Привет! Меня зовут Анна. Как тебя зовут?</span>
+                                        </div>
+                                        <div class="dialog-line">
+                                            <span class="speaker">B:</span>
+                                            <span class="english">Hello! I'm Peter. Nice to meet you!</span>
+                                            <span class="russian">Привет! Я Пётр. Приятно познакомиться!</span>
+                                        </div>
+                                        <div class="dialog-line">
+                                            <span class="speaker">A:</span>
+                                            <span class="english">Nice to meet you too!</span>
+                                            <span class="russian">Мне тоже приятно!</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vocabulary-section">
+                                    <h3>Прощание</h3>
+                                    <div class="vocab-cards">
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Goodbye</div>
+                                            <div class="vocab-transcription">[gʊdˈbaɪ]</div>
+                                            <div class="vocab-russian">До свидания</div>
+                                            <button class="play-audio-btn" data-word="goodbye">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Bye!</div>
+                                            <div class="vocab-transcription">[baɪ]</div>
+                                            <div class="vocab-russian">Пока!</div>
+                                            <button class="play-audio-btn" data-word="bye">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">See you!</div>
+                                            <div class="vocab-transcription">[siː juː]</div>
+                                            <div class="vocab-russian">Увидимся!</div>
+                                            <button class="play-audio-btn" data-word="seeyou">🔊</button>
+                                        </div>
+                                        <div class="vocab-card">
+                                            <div class="vocab-english">Take care!</div>
+                                            <div class="vocab-transcription">[teɪk keə]</div>
+                                            <div class="vocab-russian">Береги себя!</div>
+                                            <button class="play-audio-btn" data-word="takecare">🔊</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tip-box">
+                                    <span class="tip-icon">💡</span>
+                                    <div class="tip-content">
+                                        <strong>Запомните:</strong> "Nice to meet you" говорят только при ПЕРВОЙ встрече. 
+                                        При последующих встречах говорят "Nice to see you" (Рад тебя видеть).
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Квиз -->
+                        <div class="tab-pane" id="quiz">
+                            <div class="quiz-container">
+                                <div class="quiz-header">
+                                    <h2>🎯 Проверь себя!</h2>
+                                    <div class="quiz-progress">
+                                        <span class="quiz-current">Вопрос <span id="currentQuestion">1</span> из <span id="totalQuestions">5</span></span>
+                                        <div class="quiz-progress-bar">
+                                            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 20%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="quiz-content" id="quizContent">
+                                    <!-- Вопрос 1 -->
+                                    <div class="quiz-question active" data-question="1">
+                                        <h3 class="question-text">Как сказать "Привет" на английском?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Goodbye</button>
+                                            <button class="quiz-option" data-correct="true">Hello</button>
+                                            <button class="quiz-option" data-correct="false">Thank you</button>
+                                            <button class="quiz-option" data-correct="false">Sorry</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 2 -->
+                                    <div class="quiz-question" data-question="2">
+                                        <h3 class="question-text">Что означает "Nice to meet you"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">До свидания</button>
+                                            <button class="quiz-option" data-correct="false">Как дела?</button>
+                                            <button class="quiz-option" data-correct="true">Приятно познакомиться</button>
+                                            <button class="quiz-option" data-correct="false">Доброе утро</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 3 -->
+                                    <div class="quiz-question" data-question="3">
+                                        <h3 class="question-text">Когда говорят "Good morning"?</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Вечером</button>
+                                            <button class="quiz-option" data-correct="true">Утром</button>
+                                            <button class="quiz-option" data-correct="false">Днём</button>
+                                            <button class="quiz-option" data-correct="false">Ночью</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 4 -->
+                                    <div class="quiz-question" data-question="4">
+                                        <h3 class="question-text">Как спросить "Как тебя зовут?"</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">How are you?</button>
+                                            <button class="quiz-option" data-correct="false">Where are you from?</button>
+                                            <button class="quiz-option" data-correct="true">What's your name?</button>
+                                            <button class="quiz-option" data-correct="false">How old are you?</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Вопрос 5 -->
+                                    <div class="quiz-question" data-question="5">
+                                        <h3 class="question-text">Выберите неформальное приветствие:</h3>
+                                        <div class="quiz-options">
+                                            <button class="quiz-option" data-correct="false">Good afternoon</button>
+                                            <button class="quiz-option" data-correct="true">Hey!</button>
+                                            <button class="quiz-option" data-correct="false">Good evening</button>
+                                            <button class="quiz-option" data-correct="false">Goodbye</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Результаты квиза -->
+                                <div class="quiz-results hidden" id="quizResults">
+                                    <div class="results-icon" id="resultsIcon">🎉</div>
+                                    <h3 class="results-title" id="resultsTitle">Отлично!</h3>
+                                    <p class="results-text" id="resultsText">Вы ответили правильно на 5 из 5 вопросов</p>
+                                    <div class="results-score">
+                                        <div class="score-circle">
+                                            <span class="score-number" id="scoreNumber">100</span>
+                                            <span class="score-percent">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="results-actions">
+                                        <button class="btn btn-outline" id="retryQuiz">Пройти ещё раз</button>
+                                        <button class="btn btn-primary" id="continueLesson">Продолжить →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка: Игра -->
+                        <div class="tab-pane" id="game">
+                            <div class="game-container">
+                                <div class="game-header">
+                                    <h2>🎮 Игра: Соедини пары</h2>
+                                    <p>Соедини английские слова с их переводом</p>
+                                    <div class="game-stats">
+                                        <span class="game-score">Очки: <span id="gameScore">0</span></span>
+                                        <span class="game-moves">Ходов: <span id="gameMoves">0</span></span>
+                                    </div>
+                                </div>
+
+                                <div class="matching-game" id="matchingGame">
+                                    <div class="game-column english-column">
+                                        <div class="game-card" data-pair="1">Hello</div>
+                                        <div class="game-card" data-pair="2">Goodbye</div>
+                                        <div class="game-card" data-pair="3">Thank you</div>
+                                        <div class="game-card" data-pair="4">Please</div>
+                                        <div class="game-card" data-pair="5">Sorry</div>
+                                    </div>
+                                    <div class="game-column russian-column">
+                                        <div class="game-card" data-pair="3">Спасибо</div>
+                                        <div class="game-card" data-pair="1">Привет</div>
+                                        <div class="game-card" data-pair="5">Извините</div>
+                                        <div class="game-card" data-pair="4">Пожалуйста</div>
+                                        <div class="game-card" data-pair="2">До свидания</div>
+                                    </div>
+                                </div>
+
+                                <div class="game-complete hidden" id="gameComplete">
+                                    <div class="game-complete-icon">🏆</div>
+                                    <h3>Поздравляем!</h3>
+                                    <p>Вы соединили все пары за <span id="finalMoves">0</span> ходов!</p>
+                                    <button class="btn btn-primary" id="restartGame">Играть ещё раз</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка — прогресс и навигация -->
+                <aside class="lesson-sidebar">
+                    <!-- Прогресс урока -->
+                    <div class="sidebar-card progress-card">
+                        <h3>📊 Прогресс урока</h3>
+                        <div class="progress-checklist">
+                            <label class="progress-item completed">
+                                <input type="checkbox" checked disabled>
+                                <span class="checkmark">✓</span>
+                                <span>Посмотреть видео</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkMaterials">
+                                <span class="checkmark"></span>
+                                <span>Изучить материалы</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkQuiz">
+                                <span class="checkmark"></span>
+                                <span>Пройти квиз</span>
+                            </label>
+                            <label class="progress-item">
+                                <input type="checkbox" id="checkGame">
+                                <span class="checkmark"></span>
+                                <span>Сыграть в игру</span>
+                            </label>
+                        </div>
+                        <div class="lesson-complete-btn-container">
+                            <button class="btn btn-primary btn-block" id="completeLessonBtn" disabled>
+                                ✓ Завершить урок
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Навигация по урокам -->
+                    <div class="sidebar-card">
+                        <h3>📚 Уроки модуля</h3>
+                        <div class="lesson-nav-list">
+                            <a href="lesson.html?lesson=1" class="lesson-nav-item completed">
+                                <span class="nav-status">✓</span>
+                                <span class="nav-title">1. Английский алфавит</span>
+                            </a>
+                            <a href="lesson.html?lesson=2" class="lesson-nav-item completed">
+                                <span class="nav-status">✓</span>
+                                <span class="nav-title">2. Произношение гласных</span>
+                            </a>
+                            <a href="lesson.html?lesson=3" class="lesson-nav-item completed">
+                                <span class="nav-status">✓</span>
+                                <span class="nav-title">3. Произношение согласных</span>
+                            </a>
+                            <a href="lesson.html?lesson=4" class="lesson-nav-item current">
+                                <span class="nav-status">▶</span>
+                                <span class="nav-title">4. Приветствия и знакомство</span>
+                            </a>
+                            <a href="#" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">5. Числа от 1 до 20</span>
+                            </a>
+                            <a href="#" class="lesson-nav-item locked">
+                                <span class="nav-status">🔒</span>
+                                <span class="nav-title">6. Тест по модулю</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Помощь -->
+                    <div class="sidebar-card help-card">
+                        <div class="help-icon">🎓</div>
+                        <h3>Нужна помощь?</h3>
+                        <p>Если что-то непонятно, загляни в раздел помощи или напиши нам!</p>
+                        <a href="#" class="btn btn-outline btn-small btn-block">Задать вопрос</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/lesson.js"></script>
+</body>
+</html>
+

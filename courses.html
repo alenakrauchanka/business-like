@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your way to success — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="courses.html" class="active">Курсы</a></li>
+                <li><a href="index.html#categories">Категории</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-ghost">Войти</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Your way to success</h1>
+            <p class="page-subtitle">Выбери курс, который подходит именно тебе</p>
+        </div>
+    </section>
+
+    <!-- Курсы -->
+    <section class="courses-section">
+        <div class="container">
+            <!-- Сетка курсов -->
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Курс 1: Для начинающих -->
+                <article class="course-card" data-category="beginners" data-level="zero">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Английский для начинающих">
+                        <span class="course-badge beginner">Для начинающих</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">🌱 Для начинающих</div>
+                        <h3 class="course-title">Английский для начинающих</h3>
+                        <p class="course-desc">Полный курс с нуля: приветствия, порядок слов, глагол to be, Present Simple, времена и многое другое.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 40+ уроков</span>
+                            <span class="duration">⏱ 2 модуля</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.9 (256)</span>
+                            </div>
+                            <a href="course-beginners.html" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 2: Для путешествий -->
+                <article class="course-card" data-category="travel" data-level="beginner">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop" alt="Английский для путешествий">
+                        <span class="course-badge travel">Для путешествий</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">✈️ Для путешествий</div>
+                        <h3 class="course-title">Английский для путешествий</h3>
+                        <p class="course-desc">Всё для комфортных поездок: аэропорт, отель, ресторан, аренда авто, метро, музеи и многое другое.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 30 уроков</span>
+                            <span class="duration">⏱ 2 модуля</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.8 (189)</span>
+                            </div>
+                            <a href="course-travel.html" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 3: Для детей -->
+                <article class="course-card" data-category="kids" data-level="zero">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=250&fit=crop" alt="Английский для малышей">
+                        <span class="course-badge kids">Для детей</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">🎮 Для детей</div>
+                        <h3 class="course-title">Английский для малышей (5-8 лет)</h3>
+                        <p class="course-desc">Игровой курс с мультиками, песенками и весёлыми заданиями для самых маленьких.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 30 уроков</span>
+                            <span class="duration">⏱ 10 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">5.0 (312)</span>
+                            </div>
+                            <a href="course.html?id=3" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 4: Грамматика -->
+                <article class="course-card" data-category="beginners" data-level="beginner">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=250&fit=crop" alt="Грамматика для начинающих">
+                        <span class="course-badge beginner">Начинающий</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">🌱 Для начинающих</div>
+                        <h3 class="course-title">Грамматика: основы</h3>
+                        <p class="course-desc">Простое объяснение времён, артиклей и основных правил английского языка.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 20 уроков</span>
+                            <span class="duration">⏱ 10 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">4.7 (143)</span>
+                            </div>
+                            <a href="course.html?id=4" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 5: В аэропорту -->
+                <article class="course-card" data-category="travel" data-level="beginner">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=250&fit=crop" alt="В аэропорту">
+                        <span class="course-badge travel">Путешествия</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">✈️ Для путешествий</div>
+                        <h3 class="course-title">В аэропорту без страха</h3>
+                        <p class="course-desc">Все фразы и ситуации в аэропорту: регистрация, таможня, посадка, багаж.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 8 уроков</span>
+                            <span class="duration">⏱ 3 часа</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.9 (98)</span>
+                            </div>
+                            <a href="course.html?id=5" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 6: Весёлый алфавит -->
+                <article class="course-card" data-category="kids" data-level="zero">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=400&h=250&fit=crop" alt="Алфавит для детей">
+                        <span class="course-badge kids">Для детей</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">🎮 Для детей</div>
+                        <h3 class="course-title">Весёлый алфавит</h3>
+                        <p class="course-desc">Учим буквы через игры, песни и красочные мультики. Для детей 4-6 лет.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 26 уроков</span>
+                            <span class="duration">⏱ 6 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">5.0 (267)</span>
+                            </div>
+                            <a href="course.html?id=6" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 7: Разговорный английский -->
+                <article class="course-card" data-category="beginners" data-level="beginner">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=250&fit=crop" alt="Разговорный английский">
+                        <span class="course-badge beginner">Начинающий</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">🌱 Для начинающих</div>
+                        <h3 class="course-title">Разговорный английский</h3>
+                        <p class="course-desc">Практика живого общения: диалоги, фразы на каждый день, типичные ситуации.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 16 уроков</span>
+                            <span class="duration">⏱ 8 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.8 (201)</span>
+                            </div>
+                            <a href="course.html?id=7" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 8: В ресторане -->
+                <article class="course-card" data-category="travel" data-level="intermediate">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop" alt="В ресторане">
+                        <span class="course-badge travel">Путешествия</span>
+                        <button class="favorite-btn" aria-label="В избранное">♡</button>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">✈️ Для путешествий</div>
+                        <h3 class="course-title">В ресторане и кафе</h3>
+                        <p class="course-desc">Заказываем еду, читаем меню, общаемся с официантом на английском.</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 10 уроков</span>
+                            <span class="duration">⏱ 4 часа</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">4.6 (87)</span>
+                            </div>
+                            <a href="course.html?id=8" class="btn btn-small btn-primary">Начать</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Пагинация -->
+            <div class="pagination">
+                <button class="pagination-btn prev" disabled>← Назад</button>
+                <div class="pagination-numbers">
+                    <button class="pagination-num active">1</button>
+                    <button class="pagination-num">2</button>
+                    <button class="pagination-num">3</button>
+                </div>
+                <button class="pagination-btn next">Далее →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-white.svg" alt="Business Like" class="logo-img">
+                    </a>
+                    <p>Курсы английского языка</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Курсы</h4>
+                    <ul>
+                        <li><a href="courses.html?category=beginners">Для начинающих</a></li>
+                        <li><a href="courses.html?category=travel">Для путешествий</a></li>
+                        <li><a href="courses.html?category=kids">Для детей</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Преподаватели</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Поддержка</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой кабинет — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar dashboard-navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html" class="active">Мой кабинет</a></li>
+                <li><a href="courses.html">Your way to success</a></li>
+            </ul>
+            <div class="nav-user">
+                <div class="user-streak">
+                    <span class="streak-icon">🔥</span>
+                    <span class="streak-count">5</span>
+                </div>
+                <div class="user-menu">
+                    <button class="user-menu-btn" id="userMenuBtn">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Аватар" class="user-avatar">
+                        <span class="user-name" id="userName">Мария</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" class="dropdown-item">👤 Профиль</a>
+                        <a href="#" class="dropdown-item">⚙️ Настройки</a>
+                        <a href="#" class="dropdown-item">🏆 Достижения</a>
+                        <hr>
+                        <a href="#" class="dropdown-item" id="logoutBtn">🚪 Выйти</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Приветствие -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Привет, <span id="welcomeName">Мария</span>! 👋</h1>
+                    <p>Продолжай учить английский — ты на верном пути!</p>
+                </div>
+                <div class="daily-goal">
+                    <div class="goal-progress">
+                        <svg class="goal-ring" viewBox="0 0 100 100">
+                            <circle class="goal-ring-bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="goal-ring-fill" cx="50" cy="50" r="45" style="stroke-dashoffset: 85"></circle>
+                        </svg>
+                        <div class="goal-text">
+                            <span class="goal-current">15</span>
+                            <span class="goal-divider">/</span>
+                            <span class="goal-target">20</span>
+                            <span class="goal-unit">мин</span>
+                        </div>
+                    </div>
+                    <div class="goal-info">
+                        <h3>Дневная цель</h3>
+                        <p>Осталось 5 минут до выполнения</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Статистика -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Активных курса</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Уроков пройдено</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-info">
+                        <span class="stat-value">5</span>
+                        <span class="stat-label">Дней подряд</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <span class="stat-value">450</span>
+                        <span class="stat-label">Очков опыта</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Основной контент -->
+            <div class="dashboard-grid">
+                <!-- Продолжить обучение -->
+                <section class="dashboard-section continue-section">
+                    <div class="section-header-inline">
+                        <h2>▶️ Продолжить обучение</h2>
+                    </div>
+                    
+                    <div class="continue-cards">
+                        <!-- Текущий курс 1 -->
+                        <div class="continue-card">
+                            <div class="continue-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=120&h=80&fit=crop" alt="Курс">
+                                <div class="continue-progress-ring">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="ring-fill" stroke-dasharray="25, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="ring-text">25%</span>
+                                </div>
+                            </div>
+                            <div class="continue-info">
+                                <span class="continue-category">🌱 Для начинающих</span>
+                                <h3 class="continue-title">Английский с нуля</h3>
+                                <p class="continue-lesson">Урок 4: Приветствия и знакомство</p>
+                                <a href="lesson.html?course=1&lesson=4" class="btn btn-primary btn-small">
+                                    Продолжить →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Текущий курс 2 -->
+                        <div class="continue-card">
+                            <div class="continue-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=120&h=80&fit=crop" alt="Курс">
+                                <div class="continue-progress-ring">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path class="ring-fill" stroke-dasharray="10, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="ring-text">10%</span>
+                                </div>
+                            </div>
+                            <div class="continue-info">
+                                <span class="continue-category">✈️ Для путешествий</span>
+                                <h3 class="continue-title">Английский для путешествий</h3>
+                                <p class="continue-lesson">Урок 2: В аэропорту</p>
+                                <a href="lesson.html?course=2&lesson=2" class="btn btn-primary btn-small">
+                                    Продолжить →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Боковая панель -->
+                <aside class="dashboard-sidebar">
+                    <!-- Недельная активность -->
+                    <div class="sidebar-card">
+                        <h3>📊 Активность за неделю</h3>
+                        <div class="week-activity">
+                            <div class="day-bar" data-day="Пн">
+                                <div class="bar-fill" style="height: 60%"></div>
+                            </div>
+                            <div class="day-bar" data-day="Вт">
+                                <div class="bar-fill" style="height: 80%"></div>
+                            </div>
+                            <div class="day-bar" data-day="Ср">
+                                <div class="bar-fill" style="height: 40%"></div>
+                            </div>
+                            <div class="day-bar" data-day="Чт">
+                                <div class="bar-fill" style="height: 100%"></div>
+                            </div>
+                            <div class="day-bar" data-day="Пт">
+                                <div class="bar-fill" style="height: 70%"></div>
+                            </div>
+                            <div class="day-bar today" data-day="Сб">
+                                <div class="bar-fill" style="height: 50%"></div>
+                            </div>
+                            <div class="day-bar" data-day="Вс">
+                                <div class="bar-fill" style="height: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Достижения -->
+                    <div class="sidebar-card">
+                        <h3>🏆 Последние достижения</h3>
+                        <div class="achievements-list">
+                            <div class="achievement-item">
+                                <span class="achievement-icon">🌟</span>
+                                <div class="achievement-info">
+                                    <span class="achievement-title">Первые шаги</span>
+                                    <span class="achievement-desc">Завершён первый урок</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-icon">🔥</span>
+                                <div class="achievement-info">
+                                    <span class="achievement-title">На огне!</span>
+                                    <span class="achievement-desc">5 дней подряд</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-icon">🎯</span>
+                                <div class="achievement-info">
+                                    <span class="achievement-title">Меткий стрелок</span>
+                                    <span class="achievement-desc">100% в квизе</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">Все достижения →</a>
+                    </div>
+
+                    <!-- Рекомендации -->
+                    <div class="sidebar-card recommendation-card">
+                        <div class="recommendation-icon">💡</div>
+                        <h3>Рекомендуем</h3>
+                        <p>Попробуйте курс "Разговорный английский" — он отлично дополнит ваше обучение!</p>
+                        <a href="course.html?id=7" class="btn btn-outline btn-small btn-block">
+                            Посмотреть курс
+                        </a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Мои курсы -->
+            <section class="dashboard-section my-courses-section">
+                <div class="section-header-inline">
+                    <h2>📚 Мои курсы</h2>
+                    <a href="courses.html" class="view-all-link">Найти новые курсы →</a>
+                </div>
+                
+                <div class="my-courses-grid">
+                    <!-- Курс 1 -->
+                    <div class="my-course-card">
+                        <div class="my-course-image">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=160&fit=crop" alt="Курс">
+                        </div>
+                        <div class="my-course-content">
+                            <span class="my-course-category">🌱 Для начинающих</span>
+                            <h3>Английский с нуля</h3>
+                            <div class="my-course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="progress-text">6/24 уроков</span>
+                            </div>
+                            <a href="course.html?id=1" class="btn btn-outline btn-small">Перейти к курсу</a>
+                        </div>
+                    </div>
+
+                    <!-- Курс 2 -->
+                    <div class="my-course-card">
+                        <div class="my-course-image">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=160&fit=crop" alt="Курс">
+                        </div>
+                        <div class="my-course-content">
+                            <span class="my-course-category">✈️ Для путешествий</span>
+                            <h3>Английский для путешествий</h3>
+                            <div class="my-course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%"></div>
+                                </div>
+                                <span class="progress-text">2/18 уроков</span>
+                            </div>
+                            <a href="course.html?id=2" class="btn btn-outline btn-small">Перейти к курсу</a>
+                        </div>
+                    </div>
+
+                    <!-- Курс 3 -->
+                    <div class="my-course-card">
+                        <div class="my-course-image">
+                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&h=160&fit=crop" alt="Курс">
+                        </div>
+                        <div class="my-course-content">
+                            <span class="my-course-category">🌱 Для начинающих</span>
+                            <h3>Грамматика: основы</h3>
+                            <div class="my-course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 55%"></div>
+                                </div>
+                                <span class="progress-text">11/20 уроков</span>
+                            </div>
+                            <a href="course.html?id=4" class="btn btn-outline btn-small">Перейти к курсу</a>
+                        </div>
+                    </div>
+
+                    <!-- Добавить курс -->
+                    <a href="courses.html" class="add-course-card">
+                        <div class="add-icon">+</div>
+                        <span>Добавить курс</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,5 @@
+# Зависимости для генерации аудио лексики
+# Установка: pip install -r requirements.txt
+
+google-generativeai>=0.8.0
+

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768" width="1366" height="768">
+  <!-- Business Like Video Thumbnail Template -->
+  <!-- Точное соответствие фирменному стилю -->
+  
+  <!-- Белый фон -->
+  <rect width="1366" height="768" fill="#FFFFFF"/>
+  
+  <!-- ===== ГЕОМЕТРИЧЕСКИЙ ПАТТЕРН (правая часть) ===== -->
+  
+  <!-- Верхний ряд -->
+  <!-- Синий полукруг слева от паттерна -->
+  <path d="M580 0 Q580 140 720 140 L580 140 Z" fill="#1B189E"/>
+  
+  <!-- Синий блок + оранжевый/синий -->
+  <rect x="720" y="0" width="140" height="70" fill="#1B189E"/>
+  <rect x="720" y="70" width="70" height="70" fill="#FF4F13"/>
+  <rect x="790" y="70" width="70" height="70" fill="#1B189E"/>
+  
+  <!-- Жёлтый круг -->
+  <circle cx="930" cy="70" r="70" fill="#FFBB30"/>
+  
+  <!-- Жёлтый полукруг -->
+  <path d="M1000 0 L1000 140 Q1070 140 1070 70 Q1070 0 1000 0 Z" fill="#FFBB30"/>
+  
+  <!-- Оранжевый круг с жёлтым сегментом -->
+  <circle cx="1140" cy="70" r="70" fill="#FF4F13"/>
+  <path d="M1140 0 Q1210 0 1210 70 L1140 70 Z" fill="#FFBB30"/>
+  
+  <!-- Жёлтый круг справа -->
+  <circle cx="1280" cy="70" r="70" fill="#FFBB30"/>
+  
+  <!-- Синий угол справа вверху -->
+  <path d="M1366 0 L1296 0 Q1366 0 1366 70 Z" fill="#1B189E"/>
+  
+  <!-- Второй ряд -->
+  <rect x="720" y="140" width="70" height="70" fill="#FFBB30"/>
+  <rect x="790" y="140" width="70" height="70" fill="#FF4F13"/>
+  
+  <!-- Жёлтый круг -->
+  <circle cx="930" cy="210" r="70" fill="#FFBB30"/>
+  
+  <!-- Синий квадрат с жёлтым кругом внутри -->
+  <rect x="1000" y="140" width="140" height="140" fill="#1B189E"/>
+  <circle cx="1070" cy="210" r="50" fill="#FFBB30"/>
+  
+  <!-- Оранжевый полукруг -->
+  <path d="M1210 140 L1210 280 Q1280 280 1280 210 Q1280 140 1210 140 Z" fill="#FF4F13"/>
+  
+  <!-- Жёлтый и оранжевый справа -->
+  <rect x="1280" y="140" width="86" height="70" fill="#FFBB30"/>
+  <rect x="1280" y="210" width="86" height="70" fill="#FF4F13"/>
+  
+  <!-- Третий ряд -->
+  <path d="M650 210 L720 210 Q720 280 650 280 Z" fill="#FF4F13"/>
+  <path d="M720 210 L790 210 Q720 210 720 280 L720 280 L790 280 Z" fill="#FFBB30"/>
+  
+  <rect x="790" y="280" width="70" height="70" fill="#FF4F13"/>
+  <rect x="860" y="280" width="70" height="70" fill="#1B189E"/>
+  
+  <!-- Большой жёлтый круг в центре справа -->
+  <circle cx="1000" cy="420" r="120" fill="#FFBB30"/>
+  
+  <!-- Элементы справа -->
+  <path d="M1210 350 L1280 350 Q1280 420 1210 420 Z" fill="#FF4F13"/>
+  <path d="M1280 350 L1366 350 L1366 490 L1280 490 Q1280 350 1280 350 Z" fill="#1B189E"/>
+  
+  <!-- Нижние элементы -->
+  <rect x="1140" y="560" width="140" height="140" fill="#FF4F13"/>
+  <path d="M1140 700 L1280 700 L1280 768 L1140 768 Q1140 700 1140 700 Z" fill="#1B189E"/>
+  
+  <rect x="1280" y="700" width="86" height="68" fill="#FFBB30"/>
+  <rect x="1280" y="630" width="86" height="70" fill="#1B189E"/>
+  
+  <!-- Оранжевый элемент внизу справа -->
+  <rect x="1280" y="560" width="86" height="70" fill="#FF4F13"/>
+  
+  <!-- ===== КНОПКА PLAY (центр) ===== -->
+  <circle cx="683" cy="384" r="70" fill="#1A1A1A"/>
+  <polygon points="665,354 665,414 715,384" fill="#FFFFFF"/>
+  
+  <!-- ===== ЛОГОТИП (верхний левый угол) ===== -->
+  <g transform="translate(50, 45)">
+    <!-- Icon "b" - синий полукруг -->
+    <path d="M0 0 L0 55 Q28 55 28 27.5 Q28 0 0 0 Z" fill="#1B189E"/>
+    <!-- Оранжевая точка -->
+    <circle cx="35" cy="42" r="10" fill="#FF4F13"/>
+    <!-- Жёлтые точки -->
+    <circle cx="35" cy="12" r="6" fill="#FFBB30"/>
+    <circle cx="46" cy="24" r="4" fill="#FFBB30"/>
+    <!-- Text "businesslike" -->
+    <text x="62" y="40" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="600" fill="#1A1A1A">businesslike</text>
+  </g>
+  
+  <!-- ===== ТЕКСТ УРОКА ===== -->
+  <!-- Номер урока (оранжевый, курсив) -->
+  <text x="50" y="560" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" font-style="italic" fill="#FF4F13">УРОК 22</text>
+  
+  <!-- Название урока на русском (крупный, жирный) -->
+  <text x="50" y="640" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="900" fill="#1A1A1A">РАСПОРЯДОК ДНЯ</text>
+  
+  <!-- Название урока на английском -->
+  <text x="50" y="715" font-family="Montserrat, Arial, sans-serif" font-size="54" font-weight="900" fill="#1A1A1A">A DAILY ROUTINE</text>
+</svg>
+

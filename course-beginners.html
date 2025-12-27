@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Английский для начинающих — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="courses.html">Курсы</a></li>
+                <li><a href="index.html#categories">Категории</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-ghost">Войти</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Шапка курса -->
+    <section class="course-header">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <span>/</span>
+                <a href="courses.html">Курсы</a>
+                <span>/</span>
+                <span>Английский для начинающих</span>
+            </nav>
+            
+            <div class="course-hero">
+                <div class="course-hero-content">
+                    <span class="course-badge">🌱 Для начинающих</span>
+                    <h1 class="course-title">Английский для начинающих</h1>
+                    <p class="course-description">
+                        Полный курс английского языка с нуля. Вы изучите приветствия, порядок слов, 
+                        глагол to be, времена, местоимения и многое другое. Курс разбит на модули 
+                        с постепенным усложнением материала.
+                    </p>
+                    <div class="course-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">📚</span>
+                            <span class="stat-value">40+ уроков</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⏱</span>
+                            <span class="stat-value">2 модуля</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⭐</span>
+                            <span class="stat-value">4.9 (256 отзывов)</span>
+                        </div>
+                    </div>
+                    <a href="lesson-1.html" class="btn btn-large btn-primary">Начать обучение</a>
+                </div>
+                
+                <!-- Превью видео курса -->
+                <div class="course-hero-preview">
+                    <div class="video-preview-card">
+                        <div class="video-thumbnail">
+                            <img src="images/video-thumbnail-template.svg" alt="Превью курса">
+                            <a href="lesson-1.html" class="play-overlay">
+                                <span class="play-icon">▶</span>
+                            </a>
+                        </div>
+                        <div class="preview-info">
+                            <span class="preview-label">Первый урок</span>
+                            <h4>Приветствия</h4>
+                            <p>Начните изучение прямо сейчас!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Содержание курса -->
+    <section class="course-content-section">
+        <div class="container">
+            <h2 class="section-title">Содержание курса</h2>
+            
+            <!-- Модуль 1: Уроки 1-20 -->
+            <div class="module-card">
+                <div class="module-header" onclick="toggleModule(this)">
+                    <div class="module-info">
+                        <span class="module-number">Модуль 1</span>
+                        <h3 class="module-title">Уроки 1-20: Основы английского</h3>
+                        <span class="module-meta">20 уроков</span>
+                    </div>
+                    <span class="module-toggle">▼</span>
+                </div>
+                <div class="module-lessons">
+                    <a href="lesson-1.html" class="lesson-item">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Приветствия</h4>
+                            <p>Как правильно здороваться, первые глаголы, инфинитив, составление просьб</p>
+                        </div>
+                        <span class="lesson-duration">15 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=2" class="lesson-item">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Порядок слов (начало)</h4>
+                            <p>Here/there, повелительное наклонение, личные местоимения</p>
+                        </div>
+                        <span class="lesson-duration">18 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=3" class="lesson-item">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Порядок слов (продолжение)</h4>
+                            <p>Сказуемое, дополнение, разница между STUDY/LEARN/TEACH</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=4" class="lesson-item">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Порядок слов (окончание)</h4>
+                            <p>Полный порядок слов, обстоятельства, как представиться</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=5" class="lesson-item">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Притяжательные местоимения</h4>
+                            <p>My, your, our — мой, твой, наш и слово «свой»</p>
+                        </div>
+                        <span class="lesson-duration">17 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=6" class="lesson-item">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Глагол «to be». Быть или не быть?</h4>
+                            <p>Глагол-связка для описаний, эмоций, состояний, профессий</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=7" class="lesson-item">
+                        <span class="lesson-number">7</span>
+                        <div class="lesson-info">
+                            <h4>Present Simple простым языком</h4>
+                            <p>Первое грамматическое время, слова-маркеры</p>
+                        </div>
+                        <span class="lesson-duration">28 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=8" class="lesson-item">
+                        <span class="lesson-number">8</span>
+                        <div class="lesson-info">
+                            <h4>Вопросы (общие) в Present Simple</h4>
+                            <p>Do/does, дни недели, краткие ответы</p>
+                        </div>
+                        <span class="lesson-duration">24 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=9" class="lesson-item">
+                        <span class="lesson-number">9</span>
+                        <div class="lesson-info">
+                            <h4>Вопросы (специальные) в Present Simple</h4>
+                            <p>Вопросительные слова, вопрос к подлежащему, родственники</p>
+                        </div>
+                        <span class="lesson-duration">26 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=10" class="lesson-item">
+                        <span class="lesson-number">10</span>
+                        <div class="lesson-info">
+                            <h4>Отрицания в Present Simple</h4>
+                            <p>Don't/doesn't, отрицательные предложения</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=11" class="lesson-item">
+                        <span class="lesson-number">11</span>
+                        <div class="lesson-info">
+                            <h4>Числительные и время</h4>
+                            <p>Счёт, как называть время на английском</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=12" class="lesson-item">
+                        <span class="lesson-number">12</span>
+                        <div class="lesson-info">
+                            <h4>Существительные: единственное и множественное</h4>
+                            <p>Правила образования множественного числа</p>
+                        </div>
+                        <span class="lesson-duration">18 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=13" class="lesson-item">
+                        <span class="lesson-number">13</span>
+                        <div class="lesson-info">
+                            <h4>Артикли a/an и the</h4>
+                            <p>Когда использовать артикли</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=14" class="lesson-item">
+                        <span class="lesson-number">14</span>
+                        <div class="lesson-info">
+                            <h4>Указательные местоимения</h4>
+                            <p>This/that, these/those</p>
+                        </div>
+                        <span class="lesson-duration">16 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=15" class="lesson-item">
+                        <span class="lesson-number">15</span>
+                        <div class="lesson-info">
+                            <h4>There is / There are</h4>
+                            <p>Конструкция «есть, имеется, находится»</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=16" class="lesson-item">
+                        <span class="lesson-number">16</span>
+                        <div class="lesson-info">
+                            <h4>Модальный глагол can</h4>
+                            <p>Умею, могу, способен</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=17" class="lesson-item">
+                        <span class="lesson-number">17</span>
+                        <div class="lesson-info">
+                            <h4>Present Continuous</h4>
+                            <p>Действие происходит прямо сейчас</p>
+                        </div>
+                        <span class="lesson-duration">28 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=18" class="lesson-item">
+                        <span class="lesson-number">18</span>
+                        <div class="lesson-info">
+                            <h4>Present Simple vs Present Continuous</h4>
+                            <p>Сравнение двух времён</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=19" class="lesson-item">
+                        <span class="lesson-number">19</span>
+                        <div class="lesson-info">
+                            <h4>Повторение модуля 1 (часть 1)</h4>
+                            <p>Закрепляем пройденный материал</p>
+                        </div>
+                        <span class="lesson-duration">30 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=20" class="lesson-item">
+                        <span class="lesson-number">20</span>
+                        <div class="lesson-info">
+                            <h4>Повторение модуля 1 (часть 2)</h4>
+                            <p>Тест и практические задания</p>
+                        </div>
+                        <span class="lesson-duration">35 мин</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Дополнительные уроки -->
+            <div class="module-card">
+                <div class="module-header" onclick="toggleModule(this)">
+                    <div class="module-info">
+                        <span class="module-number">Бонус</span>
+                        <h3 class="module-title">Дополнительные уроки</h3>
+                        <span class="module-meta">Практика и закрепление</span>
+                    </div>
+                    <span class="module-toggle">▼</span>
+                </div>
+                <div class="module-lessons collapsed">
+                    <a href="lesson.html?course=beginners&module=bonus1&lesson=1" class="lesson-item">
+                        <span class="lesson-number">+</span>
+                        <div class="lesson-info">
+                            <h4>Практика диалогов</h4>
+                            <p>Разговорные ситуации для закрепления</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=bonus1&lesson=2" class="lesson-item">
+                        <span class="lesson-number">+</span>
+                        <div class="lesson-info">
+                            <h4>Произношение: основы</h4>
+                            <p>Работаем над акцентом</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Модуль 1: Уроки 21-40 -->
+            <div class="module-card">
+                <div class="module-header" onclick="toggleModule(this)">
+                    <div class="module-info">
+                        <span class="module-number">Модуль 1</span>
+                        <h3 class="module-title">Уроки 21-40: Продвинутые основы</h3>
+                        <span class="module-meta">20 уроков</span>
+                    </div>
+                    <span class="module-toggle">▼</span>
+                </div>
+                <div class="module-lessons collapsed">
+                    <a href="lesson.html?course=beginners&module=1&lesson=21" class="lesson-item">
+                        <span class="lesson-number">21</span>
+                        <div class="lesson-info">
+                            <h4>Past Simple: правильные глаголы</h4>
+                            <p>Прошедшее время с -ed</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=22" class="lesson-item">
+                        <span class="lesson-number">22</span>
+                        <div class="lesson-info">
+                            <h4>Past Simple: неправильные глаголы</h4>
+                            <p>Учим основные неправильные глаголы</p>
+                        </div>
+                        <span class="lesson-duration">30 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=23" class="lesson-item">
+                        <span class="lesson-number">23</span>
+                        <div class="lesson-info">
+                            <h4>Вопросы и отрицания в Past Simple</h4>
+                            <p>Did, didn't в прошедшем времени</p>
+                        </div>
+                        <span class="lesson-duration">24 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=24" class="lesson-item">
+                        <span class="lesson-number">24</span>
+                        <div class="lesson-info">
+                            <h4>Future Simple</h4>
+                            <p>Will — будущее время</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=25" class="lesson-item">
+                        <span class="lesson-number">25</span>
+                        <div class="lesson-info">
+                            <h4>Going to — планы на будущее</h4>
+                            <p>Собираюсь, планирую</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=26" class="lesson-item">
+                        <span class="lesson-number">26</span>
+                        <div class="lesson-info">
+                            <h4>Сравнение времён</h4>
+                            <p>Present, Past, Future — когда что использовать</p>
+                        </div>
+                        <span class="lesson-duration">28 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=27" class="lesson-item">
+                        <span class="lesson-number">27</span>
+                        <div class="lesson-info">
+                            <h4>Степени сравнения прилагательных</h4>
+                            <p>Больше, меньше, самый</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=28" class="lesson-item">
+                        <span class="lesson-number">28</span>
+                        <div class="lesson-info">
+                            <h4>Предлоги места</h4>
+                            <p>In, on, at, under, behind, next to</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=29" class="lesson-item">
+                        <span class="lesson-number">29</span>
+                        <div class="lesson-info">
+                            <h4>Предлоги времени</h4>
+                            <p>In, on, at с датами и временем</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=30" class="lesson-item">
+                        <span class="lesson-number">30</span>
+                        <div class="lesson-info">
+                            <h4>Модальные глаголы: must, have to</h4>
+                            <p>Должен, обязан</p>
+                        </div>
+                        <span class="lesson-duration">24 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=31" class="lesson-item">
+                        <span class="lesson-number">31</span>
+                        <div class="lesson-info">
+                            <h4>Модальные глаголы: should, would</h4>
+                            <p>Советы и вежливые просьбы</p>
+                        </div>
+                        <span class="lesson-duration">22 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=32" class="lesson-item">
+                        <span class="lesson-number">32</span>
+                        <div class="lesson-info">
+                            <h4>Much, many, a lot of</h4>
+                            <p>Много — когда что использовать</p>
+                        </div>
+                        <span class="lesson-duration">18 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=33" class="lesson-item">
+                        <span class="lesson-number">33</span>
+                        <div class="lesson-info">
+                            <h4>Some, any, no</h4>
+                            <p>Неопределённые местоимения</p>
+                        </div>
+                        <span class="lesson-duration">20 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=34" class="lesson-item">
+                        <span class="lesson-number">34</span>
+                        <div class="lesson-info">
+                            <h4>Условные предложения (0 и 1 тип)</h4>
+                            <p>If — если</p>
+                        </div>
+                        <span class="lesson-duration">28 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=35" class="lesson-item">
+                        <span class="lesson-number">35</span>
+                        <div class="lesson-info">
+                            <h4>Present Perfect: введение</h4>
+                            <p>Совершённое настоящее время</p>
+                        </div>
+                        <span class="lesson-duration">30 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=36" class="lesson-item">
+                        <span class="lesson-number">36</span>
+                        <div class="lesson-info">
+                            <h4>Present Perfect: практика</h4>
+                            <p>Have/has + V3</p>
+                        </div>
+                        <span class="lesson-duration">28 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=37" class="lesson-item">
+                        <span class="lesson-number">37</span>
+                        <div class="lesson-info">
+                            <h4>Present Perfect vs Past Simple</h4>
+                            <p>Сравнение времён</p>
+                        </div>
+                        <span class="lesson-duration">25 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=38" class="lesson-item">
+                        <span class="lesson-number">38</span>
+                        <div class="lesson-info">
+                            <h4>Пассивный залог: основы</h4>
+                            <p>Passive Voice</p>
+                        </div>
+                        <span class="lesson-duration">26 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=39" class="lesson-item">
+                        <span class="lesson-number">39</span>
+                        <div class="lesson-info">
+                            <h4>Финальное повторение (часть 1)</h4>
+                            <p>Обзор всего курса</p>
+                        </div>
+                        <span class="lesson-duration">35 мин</span>
+                    </a>
+                    <a href="lesson.html?course=beginners&module=1&lesson=40" class="lesson-item">
+                        <span class="lesson-number">40</span>
+                        <div class="lesson-info">
+                            <h4>Финальное повторение (часть 2)</h4>
+                            <p>Итоговый тест</p>
+                        </div>
+                        <span class="lesson-duration">40 мин</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-white.svg" alt="Business Like" class="logo-img">
+                    </a>
+                    <p>Курсы английского языка</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Курсы</h4>
+                    <ul>
+                        <li><a href="course-beginners.html">Для начинающих</a></li>
+                        <li><a href="course-travel.html">Для путешествий</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Поддержка</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Помощь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleModule(header) {
+            const lessons = header.nextElementSibling;
+            const toggle = header.querySelector('.module-toggle');
+            lessons.classList.toggle('collapsed');
+            toggle.textContent = lessons.classList.contains('collapsed') ? '▶' : '▼';
+        }
+    </script>
+</body>
+</html>
+

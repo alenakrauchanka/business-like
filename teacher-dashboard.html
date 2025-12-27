@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель учителя — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar dashboard-navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="teacher-dashboard.html" class="active">Мои курсы</a></li>
+                <li><a href="#" >Аналитика</a></li>
+                <li><a href="#">Ученики</a></li>
+            </ul>
+            <div class="nav-user">
+                <div class="user-menu">
+                    <button class="user-menu-btn" id="userMenuBtn">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Аватар" class="user-avatar">
+                        <span class="user-name" id="userName">Учитель</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" class="dropdown-item">👤 Профиль</a>
+                        <a href="#" class="dropdown-item">⚙️ Настройки</a>
+                        <a href="#" class="dropdown-item">💰 Выплаты</a>
+                        <hr>
+                        <a href="#" class="dropdown-item" id="logoutBtn">🚪 Выйти</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="dashboard-main teacher-main">
+        <div class="container">
+            <!-- Заголовок -->
+            <section class="teacher-header">
+                <div class="teacher-welcome">
+                    <h1>👨‍🏫 Панель учителя</h1>
+                    <p>Создавайте курсы и помогайте людям учить английский!</p>
+                </div>
+                <a href="#create-course" class="btn btn-primary btn-large">
+                    ➕ Создать курс
+                </a>
+            </section>
+
+            <!-- Статистика учителя -->
+            <section class="stats-section teacher-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Курса создано</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <span class="stat-value">256</span>
+                        <span class="stat-label">Учеников</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <span class="stat-value">4.9</span>
+                        <span class="stat-label">Средний рейтинг</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-info">
+                        <span class="stat-value">+15%</span>
+                        <span class="stat-label">Рост за месяц</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Мои курсы -->
+            <section class="teacher-courses-section">
+                <div class="section-header-inline">
+                    <h2>📚 Мои курсы</h2>
+                </div>
+
+                <div class="teacher-courses-grid">
+                    <!-- Курс 1 -->
+                    <div class="teacher-course-card">
+                        <div class="teacher-course-header">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=150&fit=crop" alt="Курс">
+                            <span class="course-status published">Опубликован</span>
+                        </div>
+                        <div class="teacher-course-content">
+                            <h3>Английский с нуля</h3>
+                            <p>24 урока • 12 часов</p>
+                            <div class="teacher-course-stats">
+                                <span>👥 145 учеников</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="teacher-course-actions">
+                                <a href="#" class="btn btn-outline btn-small">✏️ Редактировать</a>
+                                <a href="#" class="btn btn-ghost btn-small">📊 Статистика</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Курс 2 -->
+                    <div class="teacher-course-card">
+                        <div class="teacher-course-header">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=150&fit=crop" alt="Курс">
+                            <span class="course-status published">Опубликован</span>
+                        </div>
+                        <div class="teacher-course-content">
+                            <h3>Английский для путешествий</h3>
+                            <p>18 уроков • 8 часов</p>
+                            <div class="teacher-course-stats">
+                                <span>👥 89 учеников</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <div class="teacher-course-actions">
+                                <a href="#" class="btn btn-outline btn-small">✏️ Редактировать</a>
+                                <a href="#" class="btn btn-ghost btn-small">📊 Статистика</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Курс 3 (черновик) -->
+                    <div class="teacher-course-card draft">
+                        <div class="teacher-course-header">
+                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&h=150&fit=crop" alt="Курс">
+                            <span class="course-status draft">Черновик</span>
+                        </div>
+                        <div class="teacher-course-content">
+                            <h3>Грамматика: продвинутый уровень</h3>
+                            <p>12 уроков • В работе</p>
+                            <div class="teacher-course-stats">
+                                <span>📝 60% готово</span>
+                            </div>
+                            <div class="teacher-course-actions">
+                                <a href="#" class="btn btn-primary btn-small">✏️ Продолжить</a>
+                                <a href="#" class="btn btn-ghost btn-small">👁️ Превью</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Добавить курс -->
+                    <a href="#create-course" class="add-course-card teacher-add">
+                        <div class="add-icon">+</div>
+                        <span>Создать новый курс</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Форма создания курса -->
+            <section class="create-course-section" id="create-course">
+                <div class="section-header-inline">
+                    <h2>➕ Создать новый курс</h2>
+                </div>
+
+                <form class="create-course-form" id="createCourseForm">
+                    <div class="form-card">
+                        <h3>📋 Основная информация</h3>
+                        
+                        <div class="form-group">
+                            <label for="courseTitle">Название курса *</label>
+                            <input type="text" id="courseTitle" placeholder="Например: Английский для бизнеса" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="courseDescription">Описание курса *</label>
+                            <textarea id="courseDescription" rows="4" placeholder="Опишите, чему научатся ученики..." required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="courseCategory">Категория *</label>
+                                <select id="courseCategory" required>
+                                    <option value="">Выберите категорию</option>
+                                    <option value="beginners">Для начинающих</option>
+                                    <option value="travel">Для путешествий</option>
+                                    <option value="kids">Для детей</option>
+                                    <option value="business">Бизнес-английский</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="courseLevel">Уровень *</label>
+                                <select id="courseLevel" required>
+                                    <option value="">Выберите уровень</option>
+                                    <option value="zero">С нуля</option>
+                                    <option value="beginner">Начальный (A1-A2)</option>
+                                    <option value="intermediate">Средний (B1-B2)</option>
+                                    <option value="advanced">Продвинутый (C1-C2)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Обложка курса</label>
+                            <div class="image-upload">
+                                <div class="upload-area" id="uploadArea">
+                                    <span class="upload-icon">📷</span>
+                                    <p>Перетащите изображение или <span class="upload-link">выберите файл</span></p>
+                                    <span class="upload-hint">Рекомендуемый размер: 1200 x 630 px</span>
+                                </div>
+                                <input type="file" id="courseImage" accept="image/*" hidden>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <h3>📚 Уроки курса</h3>
+                        
+                        <div class="lessons-builder" id="lessonsBuilder">
+                            <!-- Урок 1 -->
+                            <div class="lesson-builder-item" data-lesson="1">
+                                <div class="lesson-builder-header">
+                                    <span class="lesson-number">Урок 1</span>
+                                    <button type="button" class="btn-remove-lesson" aria-label="Удалить урок">✕</button>
+                                </div>
+                                <div class="lesson-builder-content">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Название урока" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Ссылка на YouTube видео">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Ссылка на Rutube видео">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea rows="3" placeholder="Текстовые материалы урока..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Урок 2 -->
+                            <div class="lesson-builder-item" data-lesson="2">
+                                <div class="lesson-builder-header">
+                                    <span class="lesson-number">Урок 2</span>
+                                    <button type="button" class="btn-remove-lesson" aria-label="Удалить урок">✕</button>
+                                </div>
+                                <div class="lesson-builder-content">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Название урока" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Ссылка на YouTube видео">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Ссылка на Rutube видео">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea rows="3" placeholder="Текстовые материалы урока..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-outline btn-add-lesson" id="addLessonBtn">
+                            ➕ Добавить урок
+                        </button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline btn-large">
+                            💾 Сохранить как черновик
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            🚀 Опубликовать курс
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/teacher.js"></script>
+</body>
+</html>
+

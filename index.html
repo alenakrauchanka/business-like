@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Like — Изучай английский легко!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="courses.html">Курсы</a></li>
+                <li><a href="#categories">Категории</a></li>
+                <li><a href="#about">О нас</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-ghost">Войти</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="floating-element owl-1">📚</div>
+            <div class="floating-element book-1">📚</div>
+            <div class="floating-element star-1">⭐</div>
+            <div class="floating-element globe-1">🌍</div>
+            <div class="floating-element plane-1">✈️</div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Учи английский <span class="highlight">играючи!</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Интерактивные уроки, видео, игры и квизы для всех возрастов. 
+                    Начни своё путешествие в мир английского языка уже сегодня!
+                </p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-large btn-primary">
+                        Начать бесплатно
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="courses.html" class="btn btn-large btn-outline">
+                        Смотреть курсы
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Видео уроков</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Интерактивных игр</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10k+</span>
+                        <span class="stat-label">Учеников</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="level-badge">Начинающий</span>
+                        <span class="progress-text">Урок 3 из 12</span>
+                    </div>
+                    <div class="hero-card-content">
+                        <div class="lesson-preview">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Приветствия и знакомство</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Категории курсов -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Выбери свой путь</h2>
+                <p class="section-subtitle">Курсы для любого уровня и цели</p>
+            </div>
+            <div class="categories-grid">
+                <!-- Для начинающих -->
+                <a href="courses.html?category=beginners" class="category-card category-beginners">
+                    <div class="category-icon">🌱</div>
+                    <h3 class="category-title">Для начинающих</h3>
+                    <p class="category-desc">С нуля до уверенного общения. Алфавит, базовая грамматика и словарный запас.</p>
+                    <div class="category-meta">
+                        <span class="courses-count">12 курсов</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Для путешественников -->
+                <a href="courses.html?category=travel" class="category-card category-travel">
+                    <div class="category-icon">✈️</div>
+                    <h3 class="category-title">Для путешественников</h3>
+                    <p class="category-desc">Английский для поездок: аэропорт, отель, ресторан, экскурсии.</p>
+                    <div class="category-meta">
+                        <span class="courses-count">8 курсов</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Для детей -->
+                <a href="courses.html?category=kids" class="category-card category-kids">
+                    <div class="category-icon">🎮</div>
+                    <h3 class="category-title">Для детей</h3>
+                    <p class="category-desc">Весёлые игры, песенки и мультики. Учимся играя!</p>
+                    <div class="category-meta">
+                        <span class="courses-count">15 курсов</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Как это работает?</h2>
+                <p class="section-subtitle">Простые шаги к владению английским</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Зарегистрируйся</h3>
+                    <p>Создай аккаунт бесплатно за 30 секунд</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🎯</div>
+                    <h3>Выбери курс</h3>
+                    <p>Подбери программу под свой уровень и цели</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📺</div>
+                    <h3>Смотри уроки</h3>
+                    <p>Видео, тексты и интерактивные материалы</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🎮</div>
+                    <h3>Играй и учись</h3>
+                    <p>Закрепляй знания в играх и квизах</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные курсы -->
+    <section class="popular-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Популярные курсы</h2>
+                <a href="courses.html" class="view-all">Все курсы →</a>
+            </div>
+            <div class="courses-grid">
+                <!-- Курс 1 -->
+                <article class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Английский с нуля">
+                        <span class="course-badge beginner">Начинающий</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Английский с нуля</h3>
+                        <p class="course-desc">Полный курс для тех, кто никогда не учил английский</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 24 урока</span>
+                            <span class="duration">⏱ 12 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.9 (256)</span>
+                            </div>
+                            <a href="course.html?id=1" class="btn btn-small">Подробнее</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 2 -->
+                <article class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop" alt="Английский для путешествий">
+                        <span class="course-badge travel">Путешествия</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Английский для путешествий</h3>
+                        <p class="course-desc">Всё, что нужно знать для комфортных поездок за границу</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 18 уроков</span>
+                            <span class="duration">⏱ 8 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.8 (189)</span>
+                            </div>
+                            <a href="course.html?id=2" class="btn btn-small">Подробнее</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Курс 3 -->
+                <article class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=250&fit=crop" alt="Английский для малышей">
+                        <span class="course-badge kids">Для детей</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Английский для малышей</h3>
+                        <p class="course-desc">Игровой курс для детей 5-8 лет с мультиками и песенками</p>
+                        <div class="course-meta">
+                            <span class="lessons-count">📚 30 уроков</span>
+                            <span class="duration">⏱ 10 часов</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">5.0 (312)</span>
+                            </div>
+                            <a href="course.html?id=3" class="btn btn-small">Подробнее</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Почему Business Like?</h2>
+                <p class="section-subtitle">Наши преимущества</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Качественные видео</h3>
+                    <p>Профессиональные уроки от носителей языка и опытных преподавателей</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Интерактивные игры</h3>
+                    <p>Учись играя — запоминай слова и грамматику через увлекательные игры</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Отслеживание прогресса</h3>
+                    <p>Следи за своими достижениями и видь результат каждый день</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Учись везде</h3>
+                    <p>Занимайся с любого устройства — компьютера, планшета или телефона</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Сертификаты</h3>
+                    <p>Получай сертификаты по окончании курсов</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Для всей семьи</h3>
+                    <p>Курсы для детей и взрослых — учитесь вместе!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-owl">🎓</div>
+                <h2>Готов начать своё путешествие?</h2>
+                <p>Присоединяйся к тысячам учеников, которые уже учат английский вместе с нами!</p>
+                <a href="register.html" class="btn btn-large btn-white">
+                    Зарегистрироваться бесплатно
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-white.svg" alt="Business Like" class="logo-img">
+                    </a>
+                    <p>Курсы английского языка</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Курсы</h4>
+                    <ul>
+                        <li><a href="courses.html?category=beginners">Для начинающих</a></li>
+                        <li><a href="courses.html?category=travel">Для путешествий</a></li>
+                        <li><a href="courses.html?category=kids">Для детей</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Преподаватели</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Поддержка</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Business Like. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

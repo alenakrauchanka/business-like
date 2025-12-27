@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор обложек видео — Business Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1A1A1A;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .controls {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 600;
+            color: #1A1A1A;
+            font-size: 14px;
+        }
+        
+        input {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #1B189E;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #1B189E, #2923c4);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(27, 24, 158, 0.3);
+        }
+        
+        .btn-download {
+            background: linear-gradient(135deg, #FF4F13, #ff6b3d);
+        }
+        
+        .btn-download:hover {
+            box-shadow: 0 6px 20px rgba(255, 79, 19, 0.3);
+        }
+        
+        .preview-container {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .preview-container h2 {
+            margin-bottom: 20px;
+            color: #1A1A1A;
+        }
+        
+        #thumbnail-preview {
+            width: 100%;
+            max-width: 1366px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3e6;
+            border-radius: 12px;
+            border-left: 4px solid #FF4F13;
+        }
+        
+        .info h3 {
+            color: #FF4F13;
+            margin-bottom: 10px;
+        }
+        
+        .info p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Генератор обложек для видео</h1>
+        
+        <div class="controls">
+            <div class="form-group">
+                <label for="lessonNumber">Номер урока</label>
+                <input type="text" id="lessonNumber" value="22" placeholder="22">
+            </div>
+            <div class="form-group">
+                <label for="titleRu">Название урока (русский)</label>
+                <input type="text" id="titleRu" value="РАСПОРЯДОК ДНЯ" placeholder="РАСПОРЯДОК ДНЯ">
+            </div>
+            <div class="form-group">
+                <label for="titleEn">Название урока (English)</label>
+                <input type="text" id="titleEn" value="A DAILY ROUTINE" placeholder="A DAILY ROUTINE">
+            </div>
+            <div class="form-group" style="justify-content: flex-end;">
+                <button class="btn" onclick="updatePreview()">Обновить превью</button>
+            </div>
+        </div>
+        
+        <div class="preview-container">
+            <h2>Превью обложки (1366×768)</h2>
+            <img id="thumbnail-preview" alt="Video Thumbnail Preview">
+            
+            <div class="buttons">
+                <button class="btn btn-download" onclick="downloadSVG()">📥 Скачать SVG</button>
+                <button class="btn btn-download" onclick="downloadPNG()">📥 Скачать PNG</button>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>💡 Как использовать</h3>
+            <p>
+                1. Введите номер урока и название на русском и английском языках<br>
+                2. Нажмите "Обновить превью" чтобы увидеть результат<br>
+                3. Скачайте обложку в формате SVG (для редактирования) или PNG (для загрузки на YouTube/Rutube)<br>
+                4. Размер обложки: 1366×768 пикселей
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function generateSVG(lessonNum, titleRu, titleEn) {
+            return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768" width="1366" height="768">
+  <!-- Business Like Video Thumbnail -->
+  
+  <!-- Белый фон -->
+  <rect width="1366" height="768" fill="#FFFFFF"/>
+  
+  <!-- ===== ГЕОМЕТРИЧЕСКИЙ ПАТТЕРН (правая часть) ===== -->
+  
+  <!-- Верхний ряд -->
+  <path d="M580 0 Q580 140 720 140 L580 140 Z" fill="#1B189E"/>
+  
+  <rect x="720" y="0" width="140" height="70" fill="#1B189E"/>
+  <rect x="720" y="70" width="70" height="70" fill="#FF4F13"/>
+  <rect x="790" y="70" width="70" height="70" fill="#1B189E"/>
+  
+  <circle cx="930" cy="70" r="70" fill="#FFBB30"/>
+  
+  <path d="M1000 0 L1000 140 Q1070 140 1070 70 Q1070 0 1000 0 Z" fill="#FFBB30"/>
+  
+  <circle cx="1140" cy="70" r="70" fill="#FF4F13"/>
+  <path d="M1140 0 Q1210 0 1210 70 L1140 70 Z" fill="#FFBB30"/>
+  
+  <circle cx="1280" cy="70" r="70" fill="#FFBB30"/>
+  
+  <path d="M1366 0 L1296 0 Q1366 0 1366 70 Z" fill="#1B189E"/>
+  
+  <!-- Второй ряд -->
+  <rect x="720" y="140" width="70" height="70" fill="#FFBB30"/>
+  <rect x="790" y="140" width="70" height="70" fill="#FF4F13"/>
+  
+  <circle cx="930" cy="210" r="70" fill="#FFBB30"/>
+  
+  <rect x="1000" y="140" width="140" height="140" fill="#1B189E"/>
+  <circle cx="1070" cy="210" r="50" fill="#FFBB30"/>
+  
+  <path d="M1210 140 L1210 280 Q1280 280 1280 210 Q1280 140 1210 140 Z" fill="#FF4F13"/>
+  
+  <rect x="1280" y="140" width="86" height="70" fill="#FFBB30"/>
+  <rect x="1280" y="210" width="86" height="70" fill="#FF4F13"/>
+  
+  <!-- Третий ряд -->
+  <path d="M650 210 L720 210 Q720 280 650 280 Z" fill="#FF4F13"/>
+  <path d="M720 210 L790 210 Q720 210 720 280 L720 280 L790 280 Z" fill="#FFBB30"/>
+  
+  <rect x="790" y="280" width="70" height="70" fill="#FF4F13"/>
+  <rect x="860" y="280" width="70" height="70" fill="#1B189E"/>
+  
+  <!-- Большой жёлтый круг -->
+  <circle cx="1000" cy="420" r="120" fill="#FFBB30"/>
+  
+  <path d="M1210 350 L1280 350 Q1280 420 1210 420 Z" fill="#FF4F13"/>
+  <path d="M1280 350 L1366 350 L1366 490 L1280 490 Q1280 350 1280 350 Z" fill="#1B189E"/>
+  
+  <!-- Нижние элементы -->
+  <rect x="1140" y="560" width="140" height="140" fill="#FF4F13"/>
+  <path d="M1140 700 L1280 700 L1280 768 L1140 768 Q1140 700 1140 700 Z" fill="#1B189E"/>
+  
+  <rect x="1280" y="700" width="86" height="68" fill="#FFBB30"/>
+  <rect x="1280" y="630" width="86" height="70" fill="#1B189E"/>
+  <rect x="1280" y="560" width="86" height="70" fill="#FF4F13"/>
+  
+  <!-- ===== КНОПКА PLAY ===== -->
+  <circle cx="683" cy="384" r="70" fill="#1A1A1A"/>
+  <polygon points="665,354 665,414 715,384" fill="#FFFFFF"/>
+  
+  <!-- ===== ЛОГОТИП ===== -->
+  <g transform="translate(50, 45)">
+    <path d="M0 0 L0 55 Q28 55 28 27.5 Q28 0 0 0 Z" fill="#1B189E"/>
+    <circle cx="35" cy="42" r="10" fill="#FF4F13"/>
+    <circle cx="35" cy="12" r="6" fill="#FFBB30"/>
+    <circle cx="46" cy="24" r="4" fill="#FFBB30"/>
+    <text x="62" y="40" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="600" fill="#1A1A1A">businesslike</text>
+  </g>
+  
+  <!-- ===== ТЕКСТ УРОКА ===== -->
+  <text x="50" y="560" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" font-style="italic" fill="#FF4F13">УРОК ${lessonNum}</text>
+  <text x="50" y="640" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="900" fill="#1A1A1A">${titleRu}</text>
+  <text x="50" y="715" font-family="Montserrat, Arial, sans-serif" font-size="54" font-weight="900" fill="#1A1A1A">${titleEn}</text>
+</svg>`;
+        }
+        
+        function updatePreview() {
+            const lessonNum = document.getElementById('lessonNumber').value;
+            const titleRu = document.getElementById('titleRu').value.toUpperCase();
+            const titleEn = document.getElementById('titleEn').value.toUpperCase();
+            
+            const svg = generateSVG(lessonNum, titleRu, titleEn);
+            const blob = new Blob([svg], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            document.getElementById('thumbnail-preview').src = url;
+        }
+        
+        function downloadSVG() {
+            const lessonNum = document.getElementById('lessonNumber').value;
+            const titleRu = document.getElementById('titleRu').value.toUpperCase();
+            const titleEn = document.getElementById('titleEn').value.toUpperCase();
+            
+            const svg = generateSVG(lessonNum, titleRu, titleEn);
+            const blob = new Blob([svg], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `businesslike-lesson-${lessonNum}.svg`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+        }
+        
+        function downloadPNG() {
+            const lessonNum = document.getElementById('lessonNumber').value;
+            const titleRu = document.getElementById('titleRu').value.toUpperCase();
+            const titleEn = document.getElementById('titleEn').value.toUpperCase();
+            
+            const svg = generateSVG(lessonNum, titleRu, titleEn);
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 1366;
+            canvas.height = 768;
+            const ctx = canvas.getContext('2d');
+            
+            const img = new Image();
+            const blob = new Blob([svg], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(function(pngBlob) {
+                    const pngUrl = URL.createObjectURL(pngBlob);
+                    const a = document.createElement('a');
+                    a.href = pngUrl;
+                    a.download = `businesslike-lesson-${lessonNum}.png`;
+                    a.click();
+                    URL.revokeObjectURL(pngUrl);
+                }, 'image/png');
+                
+                URL.revokeObjectURL(url);
+            };
+            
+            img.src = url;
+        }
+        
+        // Initial preview
+        updatePreview();
+    </script>
+</body>
+</html>
