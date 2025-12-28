@@ -1,0 +1,12 @@
+# Robots.txt for Business Like
+# https://business-like.ru
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://business-like.ru/sitemap.xml
+
+# Disallow admin/tools pages
+Disallow: /tools/
+
