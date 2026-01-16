@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Intensivo de Ruso en Minsk — Verano 2025 | Linguolandia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Curso intensivo de ruso en Minsk, Belarús. 2 o 4 semanas de inmersión total. Alojamiento, visado y excursiones incluidos. Verano 2025.">
+    <meta name="keywords" content="curso ruso, aprender ruso, Minsk, Belarús, inmersión, verano 2025, Linguolandia">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        /* ===== Estilos específicos para la página de Minsk ===== */
+        
+        .minsk-hero {
+            position: relative;
+            min-height: 70vh;
+            padding: 120px 0 80px;
+            background: var(--primary);
+            overflow: hidden;
+        }
+        
+        .minsk-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .minsk-hero-text {
+            color: var(--white);
+        }
+        
+        .minsk-hero-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        
+        .minsk-hero-text .subtitle {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 24px;
+        }
+        
+        .partner-logos {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .partner-logo {
+            height: 70px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo img {
+            max-height: 54px;
+            width: auto;
+        }
+        
+        .partner-logo span {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .minsk-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        
+        .minsk-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .minsk-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* ===== Sección de duración y precios ===== */
+        
+        .pricing-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--primary);
+        }
+        
+        .pricing-card.featured::before {
+            background: var(--accent-orange);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--accent-orange);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: var(--radius-xl);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .pricing-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .pricing-hours {
+            font-size: 18px;
+            color: var(--gray-dark);
+            margin-bottom: 24px;
+        }
+        
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .pricing-price span {
+            font-size: 24px;
+            font-weight: 400;
+        }
+        
+        .pricing-breakdown {
+            background: var(--light);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .pricing-breakdown-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .pricing-breakdown-items {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        
+        .breakdown-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .breakdown-item .amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .breakdown-item .label {
+            font-size: 11px;
+            color: var(--gray);
+        }
+        
+        .pricing-cta {
+            width: 100%;
+        }
+        
+        /* ===== Sección de qué incluye ===== */
+        
+        .includes-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .includes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .includes-card {
+            background: var(--accent-yellow);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+        }
+        
+        .includes-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+        
+        .includes-list {
+            list-style: none;
+        }
+        
+        .includes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--dark);
+        }
+        
+        .includes-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .excludes-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+        }
+        
+        .excludes-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+        
+        .excludes-list {
+            list-style: none;
+        }
+        
+        .excludes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--gray-dark);
+        }
+        
+        .excludes-list li::before {
+            content: '✗';
+            color: var(--accent-orange);
+            font-weight: 800;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        /* ===== Servicios adicionales ===== */
+        
+        .extras-section {
+            padding: 80px 0;
+            background: var(--primary);
+        }
+        
+        .extras-section .section-header h2,
+        .extras-section .section-header p {
+            color: var(--white);
+        }
+        
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .extra-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-normal);
+        }
+        
+        .extra-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .extra-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .extra-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .extra-card .price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-yellow);
+        }
+        
+        .extra-card .price-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* ===== Sección de contacto ===== */
+        
+        .contact-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .contact-info h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .contact-method:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(8px);
+        }
+        
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .contact-icon.whatsapp {
+            background: #25D366;
+        }
+        
+        .contact-details h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        
+        .contact-details a,
+        .contact-details span {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        /* ===== Responsive ===== */
+        
+        @media (max-width: 1024px) {
+            .minsk-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .partner-logos {
+                justify-content: center;
+            }
+            
+            .minsk-gallery {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .pricing-grid,
+            .includes-grid,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .extras-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .minsk-hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .minsk-hero-text .subtitle {
+                font-size: 24px;
+            }
+            
+            .minsk-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .minsk-gallery img {
+                height: 180px;
+            }
+            
+            .extras-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-price {
+                font-size: 36px;
+            }
+            
+            .partner-logos {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Business Like" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="courses.html">Cursos</a></li>
+                <li><a href="index.html#categories">Categorías</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-ghost">Entrar</a>
+                <a href="register.html" class="btn btn-primary">Registro</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="minsk-hero">
+        <div class="container">
+            <div class="minsk-hero-content">
+                <div class="minsk-hero-text">
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <span>🎓 Universidad<br>Lingüística<br>de Minsk</span>
+                        </div>
+                        <div class="partner-logo">
+                            <span>🌍 Linguolandia</span>
+                        </div>
+                    </div>
+                    <h1>Curso Intensivo de Ruso en Minsk</h1>
+                    <p class="subtitle">Verano 2025</p>
+                    <p style="font-size: 18px; opacity: 0.9; margin-bottom: 32px;">
+                        Inmersión total en el idioma ruso en la Universidad Lingüística Estatal de Minsk. 
+                        Alojamiento, visado y excursiones incluidos.
+                    </p>
+                    <a href="#contacto" class="btn btn-large btn-primary">
+                        Reservar plaza
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+                <div class="minsk-gallery">
+                    <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=400&h=300&fit=crop" alt="Minsk ciudad">
+                    <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&h=300&fit=crop" alt="Universidad">
+                    <img src="https://images.unsplash.com/photo-1555992457-b8fefdd09069?w=400&h=300&fit=crop" alt="Estudiantes">
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F5F5F5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Duración y Precios -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Duración y Precios</h2>
+                <p class="section-subtitle">Pago fraccionado en tres plazos: reserva, visado y llegada</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- 2 Semanas -->
+                <div class="pricing-card">
+                    <h3>2 Semanas</h3>
+                    <p class="pricing-hours">40 horas académicas de clase</p>
+                    <p class="pricing-price">899€</p>
+                    
+                    <div class="pricing-breakdown">
+                        <p class="pricing-breakdown-title">Pago fraccionado</p>
+                        <div class="pricing-breakdown-items">
+                            <div class="breakdown-item">
+                                <div class="amount">199€</div>
+                                <div class="label">Reserva</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="amount">150€</div>
+                                <div class="label">Visado</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="amount">550€</div>
+                                <div class="label">Llegada</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contacto" class="btn btn-large btn-outline pricing-cta">Reservar 2 semanas</a>
+                </div>
+                
+                <!-- 4 Semanas -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Recomendado</span>
+                    <h3>4 Semanas</h3>
+                    <p class="pricing-hours">80 horas académicas de clase</p>
+                    <p class="pricing-price">1.199€</p>
+                    
+                    <div class="pricing-breakdown">
+                        <p class="pricing-breakdown-title">Pago fraccionado</p>
+                        <div class="pricing-breakdown-items">
+                            <div class="breakdown-item">
+                                <div class="amount">199€</div>
+                                <div class="label">Reserva</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="amount">300€</div>
+                                <div class="label">Visado</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="amount">700€</div>
+                                <div class="label">Llegada</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contacto" class="btn btn-large btn-primary pricing-cta">Reservar 4 semanas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué incluye -->
+    <section class="includes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Qué incluye el precio?</h2>
+                <p class="section-subtitle">Todo lo necesario para tu experiencia de inmersión</p>
+            </div>
+            
+            <div class="includes-grid">
+                <div class="includes-card">
+                    <h3>El precio incluye</h3>
+                    <ul class="includes-list">
+                        <li>Gestión de seguro médico</li>
+                        <li>Gestión para la admisión e invitación en la Universidad</li>
+                        <li>Traducción de la documentación</li>
+                        <li>Trámites Consulado</li>
+                        <li>Gastos correo certificado a Belarús</li>
+                        <li>Visado de una entrada</li>
+                        <li>Alojamiento en residencia de estudiantes</li>
+                        <li>Transfer estación de Minsk – alojamiento</li>
+                        <li>Trámites de registro en la Universidad</li>
+                        <li>Asistencia ante los órganos estatales de inmigración</li>
+                        <li>Una excursión fuera de Minsk</li>
+                        <li>Curso intensivo de RUSO en la Universidad</li>
+                        <li>Interlocución con los padres/tutores responsables o familiares ante cualquier contingencia</li>
+                    </ul>
+                </div>
+                
+                <div class="excludes-card">
+                    <h3>El precio NO incluye</h3>
+                    <ul class="excludes-list">
+                        <li>Billete de avión/tren</li>
+                        <li>Transporte urbano</li>
+                        <li>Comidas (los estudiantes dispondrán de una cocina en el bloque de habitaciones)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios adicionales -->
+    <section class="extras-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios Adicionales</h2>
+                <p class="section-subtitle">Personaliza tu experiencia con estos extras opcionales</p>
+            </div>
+            
+            <div class="extras-grid">
+                <div class="extra-card">
+                    <div class="extra-icon">🏠</div>
+                    <h4>Alojamiento en familia</h4>
+                    <p class="price-note">Media pensión</p>
+                    <p class="price">500€ <span class="price-note">/ 2 semanas</span></p>
+                    <p class="price">800€ <span class="price-note">/ mes</span></p>
+                </div>
+                
+                <div class="extra-card">
+                    <div class="extra-icon">📚</div>
+                    <h4>Curso adicional por la tarde</h4>
+                    <p class="price-note">En РИВШ</p>
+                    <p class="price">100-200€</p>
+                </div>
+                
+                <div class="extra-card">
+                    <div class="extra-icon">📱</div>
+                    <h4>Tarjeta de teléfono + Abono transporte</h4>
+                    <p class="price-note">Incluye datos móviles</p>
+                    <p class="price">20-25€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Reserva tu plaza y más información</h2>
+                    <p style="color: var(--gray-dark); margin-bottom: 32px;">
+                        Contacta con nosotros para resolver tus dudas y reservar tu plaza en el curso intensivo de ruso en Minsk.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:info@linguolandiaonline.com" class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <span>info@linguolandiaonline.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://wa.me/34626407842" target="_blank" class="contact-method">
+                            <div class="contact-icon whatsapp">💬</div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <span>+34 626 407 842</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=500&fit=crop" alt="Universidad de Minsk">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-owl">🇧🇾</div>
+                <h2>¿Listo para tu aventura en Minsk?</h2>
+                <p>Plazas limitadas para el verano 2025. ¡Reserva ahora y asegura tu lugar!</p>
+                <a href="#contacto" class="btn btn-large btn-white">
+                    Contactar ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-white.svg" alt="Business Like" class="logo-img">
+                    </a>
+                    <p>Cursos de idiomas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Cursos</h4>
+                    <ul>
+                        <li><a href="courses.html?category=beginners">Para principiantes</a></li>
+                        <li><a href="courses.html?category=travel">Para viajes</a></li>
+                        <li><a href="courses.html?category=kids">Para niños</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Profesores</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Business Like & Linguolandia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
